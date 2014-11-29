@@ -1,0 +1,30 @@
+Apellidos,1 (20),2 (40),3 (40),Bono,Total,Comentarios,Link Repositorio
+PerezConsuegra,20,40,20,,80,"3. Todavia leyendo datos con readlines? El loop para llenar la matriz es ineficiente, no hay necesidad de hacer tres loops! De donde sacan que ""We see that the diameter of the circles is 26 pixels""?",
+GarciaGrisales,20,40,20,,80,,
+JuanDiegoArango,20,30,20,15,85,"2. No se oye nada en los.wav resultantes. 3. es ineficiente hacer dos loops para inicializar la matriz. El espectro de potencias 1D esta mal calculado, solamente toma en cuenta dos filas de la transformada de fourier.",
+JuanFelipeMendez,20,30,20,15,85,,
+LinaPerezAngel,20,20,20,,60,2. El ruido rosa no se ve como se deberia ver en el espacio de Fourier. Por que exp(freq)? 3. Al final como se saca el radio de las circunferencias?,
+JuanSebastianGarzon,20,20,20,,60,,
+VarelaAlvarez,20,40,40,10,110,,https://github.com/lucasvarela/Rosales_Varela_hw_5
+RosalesCote,20,40,40,10,110,,
+SanabriaOrdoñez,20,30,30,,80,"2. El Ruido rosa no suena como debería. 3., el diametro no da el resultado correcto. Tampoco es claro como se calculo el diametro reportado. ",https://github.com/juankaz1/Sanabria_Linares_hw5
+LinaresRugeles,20,30,30,,80,2. El Ruido rosa no suena como debería.,
+CortesCalderon,20,30,20,,70,2. El ruido Rosa no esta bien calculado. 3. No se llega al resultado del diametro,https://github.com/AlejandroCortes/Cortes_Rodriguez_hw5
+RodriguezParra,20,30,20,,70,,
+JaramilloDuque,20,40,40,10,110,,https://github.com/davidjadu/Jaramillo_Solano_hw5
+SolanoGomez,20,40,40,10,110,,
+ArizaFuentes,10,20,0,5,35,"1. Muchos errores en el Notebook. 2. Mal calculado el ruido rosa, y no se oye nada en el .wav rosa-",https://github.com/manuel426/hw5_Ariza_Rueda
+RuedaCorredor,10,20,0,5,35,,
+ReveloObando,20,30,20,,70,"2. No se oye nada en los .wav, 3. No se calcula bien el radio de los circulos.",https://github.com/billyrev/Revelo_Pizano_hw5
+PizanoWagner,20,30,20,,70,,
+MendezReina,15,20,40,,75,1. Los filtros pasa bajas no quedan bien. Los pasa altas si. 2. EL ruido rosa esta mal calculado. Los audios se crean pero no se escucha lo que se debería. 3. Muy bien.,https://github.com/rudymmreina/Rivera_Mendez_hw5
+RiveraGuerrero,15,20,40,,75,,
+BernalNeira,15,20,40,,75,1. Los filtros pasa altas no quedan bien. Los pasa bajas si. 2. El ruido rosa está mal calculado y el espectro de potencias no va como 1/f,https://github.com/sercharpak/Hernandez_Bernal_hw5
+HernandezCharpak,15,20,40,,75,,
+AlvisNarvaez (sin compañero),5,15,0,,20,"1. Esta incompleto. 2. No esta el archivo voice.wav. El notebook no se probó, hay variables que no estan declaradas y se usan abajo, time_array no se declara nunca y da error todo el notebook. Tampoco fft_input_signal_white_noise ni fft_input_signal_pink_noise. Aun si el evaluador arregla esos errores el audio no se graba, los archivos que se crean no suenan. Esta incompleto. 3. El archivo circulos.dat no esta en el notebook. Esta incompleto. No se halla el diametroo radio de los circulos. Uno puede ponerle tamaño a los puntos del plot para que se vean.",https://github.com/alvise30/alvis_hw5
+CatilloRuiz,10,40,2,,52,"Esta mal el repositorio, se debia crear uno aparte para cada tarea. Esta muy mal ordenado, hay muchos notebooks con nombres confusos. 1. No se puede correr el notebook correctamente por errores de variables: name 'Im1' is not defined. Tienen que probar el notebook completo antes de enviarlo, no corre por eso. Los filtros pasa altas no estan bien calculados. 2. Obtuvo es con ""v"". 3. Esta incompleto.",https://github.com/natalycr/GithubComputacionalTareas/tree/master/CastilloFarfan_hw5
+FarfanRomero,10,40,2,,52,,
+OlayaCortes,10,10,15,,35,1. El filtro pasa altas no funciona correctamente. 2. No se oye nada en los .wav. El ruido rosa está mal calculado y el espectro de potencias no va como 1/f. 3. Esta incompleto. No se halla el diametro o radio de los circulos. Uno puede ponerle tamaño a los puntos del plot para que se vean.,https://github.com/azumaro/Olaya_Umana_hw5
+UmañaRojas,10,10,15,,35,,
+CuervoGomez,7,25,10,,42,"1. No se hace el ejercicio, esta incompleto. El plot final no funciona, bota error porque no puede recibir tuplas como indices. No se calculo para ninguna imagen nada. 2. El ruido rosa no suena. Cuando se cambia el archivo de audio por uno diferente no sirve el notebook, esto no puede pasar, el notebook esta hecho para acomodarse a la señal que ustedes grabaron, mas no funciona con otra. 3. Esta incompleto. ",https://github.com/auracuervog/Cuervo_Diaz_hw5
+DiazMeza,7,25,10,,42,,
