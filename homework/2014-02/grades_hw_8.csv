@@ -17,7 +17,7 @@ CortesCalderon,45,,60,105,https://github.com/AlejandroCortes/Cortes_Mendez_hw8.g
 MendezReina,45,,60,105,,,,,
 Rodriguez Parra,40,25,,65,https://github.com/larodriguez/PerezConsuegra_Rodriguez_hw8,"1. m debe ser un entero, en las iteraciones se debe generar un numero aleatorio que cumpla esto, al igual que phi que debe estar entre 0 y 2pi y los radios deben ser mayores que cero. 2. La seleccion de puntos es razonable, pero el fit no tiene sentido. Hubieran podido utilizar MCMC para hacerlo.",,,
 Perez Consuegra ,40,25,,65,,,,,
-Farfan Romero,0,0,0,0,https://github.com/Doctus5/FarfanRomero_DiazMeza_hw8,El codigo de la cadena de Markov es copia del codigo de Solano y Arango,,,
+Farfan Romero,0,0,0,0,https://github.com/Doctus5/FarfanRomero_DiazMeza_hw8,El codigo de la cadena de Markov es copia del codigo de otro grupo.
 Diaz Meza,0,0,0,0,,,,,
 Castillo Ruiz,25,,25,50,https://github.com/sebastianrosales/Castillo_Rosales_hw8,"1. No pusieron las imagenes en el repositorio. m debe ser un entero, en las iteraciones se debe generar un numero aleatorio que cumpla esto, al igual que phi que debe estar entre 0 y 2pi y los radios deben ser mayores que cero. No muestran las distribuciones finales de probabilidad de los parámetros. no sirve el programa, se queda atrapado en un loop infinito en las condiciones iniciales que no deja que se ejecute la celda siguiente. 2. Los valores de la matriz se debian encontrar a partir de un ajuste lineal. La definicion de los delta no tiene sentido.",,,nota el punto 3 es el que dice final
 Rosales,25,,25,50,,,,,
