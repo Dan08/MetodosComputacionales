@@ -1,0 +1,29 @@
+Apellidos,1 - codigo C (10),1 - código P (10),1 - Makefile (10),2 - código C (50),2 - código P (10),2 - Makefile (10),Bono,Total,Repositorio,Comentarios
+Arango Juan Diego,10,10,10,48,10,8,,96,https://github.com/lucasvarela/Arango_Varela_hw6,"1. En los repositorios no se suben ejecutables, solamente archivos de texto. 2. La energia cinetica entra en eV no en MeV. Es engorroso modificar el makefile para diferentes valores de energia o angulo. "
+Varela Lucas,10,10,10,48,10,8,,96,,
+Perez Consuegra,8,10,10,20,10,8,,66,https://github.com/rudymmreina/Perez_Mendez_hw6,"1. No es necesario copiar los valores adentro de las funciones de C. Los datos para 30 20 deberian ser un punto, porque es la condicion de equilibrio. 2.La trayectoria es incorrecta. Es engorroso usar el Makefile para nuevos valores de la energia, angulo."
+Mendez Reina,8,10,10,20,10,8,,66,,
+Hernandez Charpak,5,10,5,50,10,8,,88,https://github.com/sercharpak/Hernandez_Farfan_hw6.git,"En el repositorio no se guardan archivos ejecutables, solamente archivos de text. 1. El archivo en C escribe mal el nombre de los archivos y hace que el makefile falle. 2. Es engorroso cambiar la energia/angulo."
+Farfan,5,10,5,50,10,8,,88,,
+JaramilloDuque,10,10,10,50,10,8,,98,https://github.com/davidjadu/Jaramillo_Linares_hw6.git,2. No hay una variable en el makefile que permita cambiar facilmente los parametros
+LinaresRugeles,10,10,10,50,10,8,,98,,
+ArizaFuentes,10,10,2,20,10,6,,58,https://github.com/manuel426/Ariza_Revelo_hw6.git,"1. Solo deberia haber un makefile, a menos que le pongan diferente nombre. No deben estar en la misma carpeta esos dos, hay que separarlos por puntos. El makefile no funciona, hay que hacerlo a mano 2. Solo deberia haber un makefile, a menos que le pongan diferente nombre. No deben estar en la misma carpeta esos dos, hay que separarlos por puntos. No da la trayectoria correcta. En el Makefile no hay una variable que haga fácil cambiar la energía y el ángulo."
+ReveloObando,10,10,2,20,10,6,,58,,
+GarciaGrisales,10,10,10,20,10,8,,68,https://github.com/davidalejogarcia/Garcia_Sanabria_HW6,2. No hay una variable en el makefile que permita cambiar facilmente los parametros. No da la trayectoria correcta. Es mas facil usar loadtxt que leer por lineas. 
+SanabriaOrdoñez,10,10,10,20,10,8,,68,,
+SolanoGomez,10,10,10,50,10,8,15,113,https://github.com/jesugome/Bernal_Solano_hw6,2. No hay una variable en el makefile que permita cambiar facilmente los parametros
+BernalNeira,10,10,10,50,10,8,15,113,,
+CuervoGomez,10,5,2,50,10,4,,81,https://github.com/auracuervog/Cuervo_Rivera_hw6,"1. Hay 3 makefiles, cual es? Ninguno sirve, hay que hacerlo a mano. No hay ningun nombre acorde al enunciado de la tarea. El porgrama en python no esta acorde con el makefile y el codigo en c. 2. Si cambian los nombres de los codigos deben cambiarlos tambien en el makefile, eso ocasiona que no funcione correctamente. Para la grafica con plot (en lugar de scatter) sale de una, no se demora tanto"
+RiveraGuerrero,10,5,2,50,10,4,,81,, 
+OlayaCortes,0,0,0,20,0,0,,20,https://github.com/alvise30/Olaya_Alvis_hw6,1. No lo hicieron. 2. Solo hicieron el codigo fuente. No da la trayectoria correcta.
+AlvisNarvaez,0,0,0,20,0,0,,20,,
+RuedaCorredor,2,10,4,0,8,8,,32,https://github.com/hsrueda/Rueda_Diaz_hw6,"1. El makefile no sirve, hay problemas de indentación que aún cuando se corrigen tampoco funciona. El codigo en c esta mal, no corre. 2. No se compila correctamente en el makefile. Hay errores de sintaxis en el programa que grafica. No sigue la trayectoria correcta"
+DiazMeza,2,10,4,0,8,8,,32,,
+MendezValderrama,10,10,5,50,10,10,,95,https://github.com/sebastianrosales/Rosales_Mendez_hw6,"1. El makefile no sirve, toca hacerlo a mano."
+RosalesCote,10,10,5,50,10,10,,95,,
+RodriguezParra,10,10,10,50,10,6,,96,https://github.com/larodriguez/Garzon_Rodriguez_hw6,2. El makefile no compila bien el programa. No hay una variable en el makefile que permita cambiar facilmente los parametros
+GarzonAlvarado,10,10,10,50,10,6,,96,,
+CortesCalderon,10,10,10,20,10,8,,68,https://github.com/LinaPerez/CortesCalderon_PerezAngel_Hw6,2. No hay una variable en el makefile que permita cambiar facilmente los parametros. No da la trayectoria correcta. 
+PerezAngel,10,10,10,20,10,8,,68,,
+PizanoWagner,10,10,0,10,2,2,,34,https://github.com/natalycr/Pizano_Castillo_hw6,"Esta muy desorganizado, hay 4 carpetas con nombres diferentes, deben subir lo que vayan a entregar, no los drafts que han hecho. Se revisaron las carpetas Punto1Final y Punto2make. 1. El makefile esta mal hecho. 2. El makefile no compila bien el codigo. El makefile no es lo mismo que un script, la gracia es que haga cada paso por aparte. El codigo no funciona, compila pero se queda atrapado en un loop hasta que se genera segmentation fault. Las graficas no funcionan acorde a los nombres que se debian tener en el enunciado. Las graficas no se guardan como se piden, una no se muestra siquiera. Ademas no cogen las columnas que son."
+CastilloRuiz,10,10,0,10,2,2,,34,,
