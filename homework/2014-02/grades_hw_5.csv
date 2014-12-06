@@ -13,7 +13,7 @@ CortesCalderon,20,30,20,,70,2. El ruido Rosa no esta bien calculado. 3. No se ll
 RodriguezParra,20,30,20,,70,,
 JaramilloDuque,20,40,40,10,110,,https://github.com/davidjadu/Jaramillo_Solano_hw5
 SolanoGomez,20,40,40,10,110,,
-ArizaFuentes,10,20,0,5,35,"1. Muchos errores en el Notebook. 2. Mal calculado el ruido rosa, y no se oye nada en el .wav rosa-",https://github.com/manuel426/hw5_Ariza_Rueda
+ArizaFuentes,10,20,10,5,45,"1. Muchos errores en el Notebook. 2. Mal calculado el ruido rosa, y no se oye nada en el .wav rosa-",https://github.com/manuel426/hw5_Ariza_Rueda
 RuedaCorredor,10,20,0,5,35,,
 ReveloObando,20,30,20,,70,"2. No se oye nada en los .wav, 3. No se calcula bien el radio de los circulos.",https://github.com/billyrev/Revelo_Pizano_hw5
 PizanoWagner,20,30,20,,70,,
