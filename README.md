@@ -1,4 +1,4 @@
-ComputationalMethods
+Computational Methods
 ============================
 
-All the material for the Computational Methods Course at Uniandes
+Material for the Computational Methods Course at Uniandes

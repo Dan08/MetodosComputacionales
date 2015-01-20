@@ -1,6 +1,7 @@
 ignore/*
 *.aux
 *.log
+*.synctex.gz
 *~
 *.o
 *.out
