@@ -1,0 +1,100 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\mdfdefinestyle{mystyle}{leftmargin=1cm,rightmargin=1cm,linecolor=red}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{blue}}
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 2 - \textsc{C}: Algunas aplicaciones \\
+Profesor: Sebastián Pérez Saaibi\\
+Fecha de Publicación: {\small \it Febrero 6 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Fecha de Entrega:  \bf Febrero 20 de 2015 antes de las 11:50AM COT}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+Los scripts de solución de este taller deben ser presentados en un solo archivo con nombre \verb+NombreApellido_HW1.zip+ en \textbf{sicuaplus}. Por ejemplo: yo deber\'ia subir un archivo llamado \verb"SebastianPerez_HW1.zip"
+
+En cada parte del ejercicio se entrega 1/3  de los puntos si el código propuesto es razonable, 1/3 si se puede ejecutar y 1/3 si entrega resultados correctos.
+
+
+\vspace{0.5cm}
+
+
+\begin{questions}
+
+\question[50] {\bf{Barajando Arreglos}} En este punto, vamos a aprender a escribir algoritmos para desordenar arreglos numéricos usando \emph{C}.
+
+\begin{parts}
+\part[15] Escriba un algoritmo llamado \verb+barajar_n.c+ que desordene un arreglo de \emph{n} elementos de manera aleatoria (puede pensar en una baraja de cartas, por ejemplo). Este algoritmo debe seleccionar un elemento, de manera aleatoria, del arreglo (en el rango \verb+[0, n - 1]+) y después validar si ese elemento ya fue \emph{barajado}.
+\part[5] Mejore el anterior algoritmo con la siguiente condición: seleccione un número aleatorio entre \verb+[0, m - 1]+ donde m empieza en n y disminuye en 1 por cada iteración. Llámelo \verb+barajar_m.c+
+\part[20] Implemente un \emph{barajador} \verb+O(n)+ así: seleccione un número aleatorio restante (del frente de los números, y ubíquelo en su nuevo lugar en la parte posterior). El elemento sin barajar de la parte posterior, se mueve al frente, donde espera ser barajado. Llámelo \verb+barajar_fy.c+
+\part[10] Asuma que se tiene una baraja de 5 cartas. Genere una visualización (usando gnuplot) del funcionamiento de cada algoritmo. Cuál algoritmo es mejor? Comente su respuesta en el código. Llámelo \verb+viz_barajas.c+
+\end{parts}
+ 
+\newpage 
+ 
+\question[50] {\bf{Movimiento aparente de las estrellas en el cielo}} Como vemos cada noche las estrellas realizan un movimiento aparente en el cielo, en realidad este movimiento se debe a la rotación de la tierra sobre su propio eje y alrededor del Sol. En el catalogo \verb+hipparcos.csv+ \footnote{\url{https://github.com/spsaaibi/ComputationalToolsData/tree/master/data/Hipparcos}} se encuentra la siguiente información  \verb+id AR DEC Mag Distance+ de cada estrella, Donde  \verb+AR+ y \verb+DEC+ son las coordenadas ecuatoriales \footnote{\url{http://es.wikipedia.org/wiki/Coordenadas_ecuatoriales}} de las estrellas. \verb+Mag+ Esta relacionado con la luminosidad de la estrella y \verb+Distance+ es la distancia a la estrella en parsecs \footnote{\url{http://es.wikipedia.org/wiki/Parsec}}. Todos los codigos deben usar funciones y punteros.
+
+
+\begin{parts}
+
+\part[15] Escriba un codigo en \verb+C+ que se llame \verb+conversion.c+ que transforme las coordendas del sistema ecuatorial (\verb+AR+ y \verb+DEC+) a las coordenadas horizontales de \verb+Altura+ y \verb+Azimut+. Esto hagalo para todas las latitues y longitudes del mundo. Use la hora de su nacimiento. El codigo debe leer el archivo \verb+hipparcos.csv+ y debe imprimir un archivo \verb+hiparcos_horizontal_lat_lon.csv+ donde \verb+lat+ y \verb+lon+ corresponden a la latitud y longitud usada.    
+
+\part[20] Escriba un codigo que se llame \verb+timelapse.c+ que seleccione las estrellas que er\'an visibles en el firmamento para la latitud y longitud de donde ud nacio. Evolucione el tiempo 5 horas despues de ud haber nacido y grafique el movimiento de las estrellas cada 10 min durante este tiempo. El codigo debe crear un archivo \verb+timelapse.dat+ con los datos usados en la grafica.  
+
+\part[15] Escriba un codigo que lea el archivo \verb+hipparcos_horizontal_lat_lon.csv+ este debe seleccionar las 100 estrellas mas luminosas que estaban en el cielo (\verb+Mag<6.0+) cuando ud nació y grafique en 3D usando coordenadas horizontales estas estrellas en el momento de su nacimiento. El codigo debe crear un archivo \verb+100_hipparcos.dat+ con los datos usados en la grafica.
+ 
+\end{parts}
+
+\end{questions}
+\end{document}
