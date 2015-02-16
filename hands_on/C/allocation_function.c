@@ -2,6 +2,7 @@
    Example showing two ways to make an allocation from a function.
 */
 #include <stdio.h>
+  
 #include <stdlib.h>
 
 void bad_function(int *list, int n_points);
