@@ -6,7 +6,7 @@ int main(int argc, char **argv){
   n=atoi(argv[1]);
   
   for(i=0;i<n;i++){
-    printf("Hola %d\n", i);
+    printf("Hola, tengo hambre! %d\n", i);
   }
   return 0;
 }
