@@ -1,14 +1,14 @@
 import numpy as np
 
 """
-Module with all the functions to process sismographic data.
+Module with all the functions to process seismographic data.
 Authors: Jaime E. Forero-Romero
 Creation date: Tue Oct  8 11:48:53 COT 2013
 """
 
 def load_data(filename):
     """
-    Loads sismographic data from an ascii file.
+    Loads seismographic data from an ascii file.
 
     Input: filename.
     Output: numpy array with all the data.
