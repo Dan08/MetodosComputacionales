@@ -1,0 +1,168 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{mdframed}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\mdfdefinestyle{mystyle}{leftmargin=1cm,rightmargin=1cm,linecolor=red}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{blue}}
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 3 - \textsc{Python y R}: Estadística Computacional \\
+Profesor: Sebastián Pérez Saaibi\\
+Fecha de Publicación: {\small \it Febrero 24 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Fecha de Entrega:  \bf Marzo 9 de 2015 antes de las 11:50AM COT}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+
+Todo el código fuente y los datos se debe encontrar en un repositorio público en github con un commit final hecho antes de Marzo 9 de 2015 antes de las 11:50AM COT. El nombre del repositorio debe ser \verb+CM20151_HW3_NombreApellido+, por ejemplo yo debo crear un repositorio llamado \verb+CM20151_HW3_SebastianPerez+. El link al repositorio lo deben enviar a través de \textbf{sicuaplus} antes de la fecha/hora límite.
+
+En cada parte del ejercicio se entrega 1/3  de los puntos si el código propuesto es razonable, 1/3 si se puede ejecutar y 1/3 si entrega resultados correctos.
+
+\vspace{0.3 cm}
+
+\textbf{Bono}: Si se entrega la tarea antes de las 11:50AM COT del Viernes 6 de Marzo los puntos se calificarán sobre 25-25-30-40, es decir la nota máxima posible es 120 en ese caso.
+
+
+\vspace{0.5cm}
+
+
+\begin{questions}
+
+\question[20] {\bf Calculando Capicúas \footnote{\url{http://es.wikipedia.org/wiki/Capicua}}} En un cuaderno de ipython llamado \verb+cal_capicuas.ipynb+, responda las siguientes preguntas:
+
+\begin{parts}
+\part[8] Imprima una lista de todos los capicúas de 9 dígitos. Cuántos hay?
+\part[5] Imprima una lista de todos los capicúas de 9 dígitos que también son capicúas en representación binaria. Cada línea de la lista debe ser de la forma: \verb+cap_base10 = cap_bin+. Cuántos hay?
+\part[7] escriba un programa que verifique si una cadena de caracteres es palíndroma. Un ejemplo de texto palíndromo \footnote{\url{http://www.movimientorever.blogspot.com/2013/02/obras-presentadas-al-iii-premio.html}}:
+
+\begin{verbatim}
+Ay! Oír la sonrisa, madre: Lola iba sin ropa.
+-Va, se sube, medita.
+-Airado, llamé a comer seis ratones.
+-Aleve su amor a aves o maleza para robar tesoro.
+-Se trabó.
+-¡Rara paz!
+-El amo se va a Roma.
+-Use vela.
+-Sé notar, si es remo cae mal; lo daría a ti.
+-Déme buses a vapor.
+-Ni sabía lo lerda, mas irnos al río, ya.
+\end{verbatim} 
+
+\end{parts}
+
+\newpage
+
+\question[20] {\bf Subiendo Escaleras} Usted tiene que subir una escalera que tiene exactamente $N$ escalones, numerados de 1 a N. Con cada paso, usted puede subir de a uno o dos escalones, o más precisamente:
+Con su primer paso usted puede terminar en el escalón 1 o 2. Si usted está en el escalón $K$ puede moverse a los escalones $K+1$ o $K+2$. Finalmente, tiene que llegar al escalón $N$. Su tarea será calcular el número de maneras diferentes de escalar esta escalera.
+
+Escriba su solución en un archivo llamado \verb+subiendo_escaleras.py+
+
+\begin{parts}
+\part[8] Cuántas distintas maneras existen de subir la escalera de 13 escalones? Cuántas para una de 15?
+\part[12] Escriba una función, \verb+escaleras(A,B)+ que dados dos arreglos A y B, cada uno de L enteros, devuelva un arreglo de L enteros que especifique las respuestas consecutivas, es decir, la posición $i$ del arreglo debe contener el número de maneras distintas de escalar la escalera con $A[i]$ escalones módulo $2B[i]$
+
+Por ejemplo, dado $L = 5$ y:
+\begin{verbatim}
+    A[0] = 4   B[0] = 3
+    A[1] = 4   B[1] = 2
+    A[2] = 5   B[2] = 4
+    A[3] = 5   B[3] = 3
+    A[4] = 1   B[4] = 1
+\end{verbatim}
+
+La función debe resultar en la secuencia $[5, 1, 8, 0, 1]$.
+
+Asuma que:
+
+L es un entero en el rango $[1-10000]$, cada elemento del arreglo A es un entero en el rango $[1-L]$ y cada elemento del arreglo B es un entero en el rango $[1-20]$.
+
+
+\end{parts}
+
+
+
+\question[25]{\bf Manipulando Archivos con Python}
+
+El objetivo de este punto es aprender a manipular archivos de datos. 
+
+
+\begin{parts}
+	\part[5] En la carpeta \verb+test+ $100$ archivos \verb+.txt+ llamarlos todos con un \verb+for+ y hacer una 
+        animaci\'on de las columnas $1$ y $2$ de estos archivos, El codigo debe llamarse \verb+animate.py+.
+	\part[5] El archivo \verb+.csv+ contiene datos que estan separados por \verb+,+ lea estos archivos y reemplaze la \         verb+,+ por \verb"+" y guarde este nuevo archivo como \verb+.dat+. Repita esto pero ahora usando \verb+!+ para usar comandos en la terminal. Por ejemplo \verb+! ls+ me muestra los archivos en donde este el codigo. El codigo debe llamarse
+        \verb+csvtodat.py+.
+	\part[5] En el archivo \verb+Sainte-Beuve.txt+ se encuetra el libro de Baudelaire lea las primeras \verb+n+
+        lineas del archivo, donde \verb+n+ entra por parametro (es decir use la librearia sys). El programa 
+        debe imprimir el n\'umero de vocales que hay en cada linea. El codigo debe llamarse \verb+vocales.py+.
+	\part[5] Realize un tutorial en un ipython notebook en el cual explique como leer y escribir un archivo binario. 
+        De ejemplos. Est notebook debe llamarse \verb+binary-tutorial.ipynb+
+        \part[5] Lear el archivo \verb+Houston-security.xls+ con la libreria \verb+Pandas+, lea cada una de las columnas y        responda a que hora del d\'ia es mas seguro salir seg\'un el delito de asalto agravado. Haga una histograma para de        la hora del delito para todos los tipos de delitos que hay. El notebook que haga esto debe llamarse \verb+Houston_tenemos_un_problema.ipynb+ 
+\end{parts}
+
+\newpage 
+
+\question[35] {\bf Predicciones Financieras} Una aplicación interesante del análisis de datos, es en la predicción de eventos financieros. En este ejercicio vamos a calcular algunas predicciones sobre la fluctuación entre peso colombiano y dolar en el último año. (COP/USD). Cree un archivo llamado \verb+prediccion.Rmd+ que genere lo siguiente (Recuerde usar el paquete \verb+ggplot2+):
+
+\begin{parts}
+\part[5] Usando el paquete \verb+Quandl+, descargue la serie de tiempo de precios diarios de COP/USD desde el 2000 hasta \verb+2015-02-23+. Imprima los 5 primeros valores de esta serie de tiempo.
+\part[10] cree una visualización donde se muestre la evolución temporal de COP/USD en este periodo, usando \verb+ggplot2+. El título del gráfico debe contener el rango de tiempo.
+\part[10] Cree un gráfico donde se vean estos datos año por año. Tip: Puede usar el paquete \verb+lubridate+ y el concepto de \emph{facets}.
+\part[10] Haga una visualización de su predicción de esta serie de tiempo hasta hasta $2017-01-01$. Puede utilizar desde un modelo lineal ($lm$) hasta cualquier generalización que le parezca $glm$,$gam$, etc. Describa y justifique su escogencia.
+
+
+
+
+\end{parts} 
+
+\end{questions}
+\end{document}
