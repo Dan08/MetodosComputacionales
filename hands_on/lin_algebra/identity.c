@@ -6,8 +6,8 @@
 #include <stdlib.h>
 int main(void){
   float *I;
-  int n_x=5;
-  int n_y=5;
+  int n_x=40;
+  int n_y=40;
   int pos;
   int i,j;
 

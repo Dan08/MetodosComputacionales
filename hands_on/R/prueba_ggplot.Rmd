@@ -1,0 +1,57 @@
+---
+title: "Pruebas con ggplot"
+author: "spsaaibi"
+date: "February 24, 2015"
+output: html_document
+---
+
+Primero cargo los paquetes
+
+```{r}
+# load packages
+library(knitr) ## si no está install.packages('knitr')
+
+library(ggplot2)
+library(RColorBrewer)
+
+```
+
+Después cargo los datos
+
+```{r}
+#' load data
+gdURL <- "http://tiny.cc/gapminder"
+gDat <- read.delim(file = gdURL) 
+str(gDat)
+```
+
+Hagamos gráficas!
+
+```{r}
+jCountries <- c("Canada", "Colombia", "Argentina", "Brazil", "China", "Nigeria")
+x <- droplevels(subset(gDat, country %in% jCountries))
+ggplot(x, aes(x = year, y = lifeExp, color = country)) +
+  geom_line() + geom_point()
+``` 
+
+
+Scatterplot de colores
+```{r}
+ggplot(gDat) + geom_point(aes(x=lifeExp,y = gdpPercap, color = country)) + facet_wrap(~ continent, scales = "free")
+```
+
+
+Otro gráfico
+
+```{r}
+jCountries <- c("Canada", "Colombia", "Argentina", "Brazil", "China", "Nigeria")
+x <- droplevels(subset(gDat, country %in% jCountries))
+x <- transform(x, country = reorder(country, -1 * lifeExp, max))
+ggplot(x, aes(x = year, y = lifeExp, color = country)) +
+  geom_line() + geom_point()
+```
+
+
+
+
+

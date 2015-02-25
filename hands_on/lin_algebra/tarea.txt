@@ -1,7 +1,7 @@
 Tarea Algebra Lineal
 
 En un dia soleado, hay 2 mesas en un jardin exterior de una bella casa del municipio de Chia. 
-En cada una de las mesas, pajaros de especies de esconocidas se asolean y divierten.
+En cada una de las mesas, pajaros de especies de desconocidas se asolean y divierten.
 
 
 Un pajaro de la primera mesa le dice a los de la segunda: "Si quieren venir a nuestra mesa, entonces tendriamos el
@@ -9,7 +9,7 @@ mismo numero de pajaros en cada mesa".
 "Si, claro", responde un pajaro en la segunda mesa "pero si alguno de ustedes viene a esta mesa, tendriamos el doble
 de pajaros en esta mesa que en la de ustedes".
 
-Resolver, con lo que saben de ecuaciones diferenciales:
+Resolver, con lo que saben de ecuaciones lineales:
 - Cuantos pajaros hay en cada mesa?
 - Plantee y resuelva un sistema lineal, usando las herramientas que se aprendieron en esta parte del curso
 

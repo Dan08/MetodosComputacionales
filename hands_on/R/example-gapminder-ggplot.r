@@ -2,7 +2,7 @@
 ## https://github.com/jennybc/ggplot2-tutorial/
 
 #+ setup, include = FALSE
-library(knitr)
+library(knitr) ## si no está install.packages('knitr')
 
 library(ggplot2)
 library(RColorBrewer)
