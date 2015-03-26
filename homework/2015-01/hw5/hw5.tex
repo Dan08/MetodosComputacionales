@@ -95,17 +95,18 @@ De esta manera, al hallar la densidad en el espacio de fourier, encontramos el p
 \rho_{i,j,k} = \frac{m}{\Delta x \Delta y \Delta z} \sum_{p=1}^{N_p} W(x_i - x_p)W(y_i - y_p)W(z_i - z_p)
 \end{equation}
 
-Donde $i, j, k = x, y, z$, $m$ es la masa de las part\'iculas en la celda, $N_p$ es el n\'umero total de part\'iculas y $W(x)$ está definido por:
+Donde $i, j, k = x, y, z$, $m$ es la masa de las part\'iculas en la mitad de la celda, $N_p$ es el n\'umero total de part\'iculas, $x_i$ es la posicion $x$
+del dentro de la celda $i$ (e.g $x_i$ de la celda 2 ser\'a $3\Delta x /2 $) y $W(x)$ está definido por:
 
 \[
 W(x) = \left\{
   \begin{array}{l l}
-    1+x/\Delta x & -\Delta x < x\\
-    1-x/\Delta x & x < \Delta x \\
+    1-|x|/\Delta x & |x|<\Delta\\
     0 & dlc
   \end{array} \right.
 \]
 
+Nota: Las densidades se evaluan en el centro de cada celda. 
 
 \part[15] Hacer la transformada inversa de Fourirer para el potencial gravitacional $\hat{\phi}$ para encontrar $\phi$. 
 \part[15]  Derivar el potencial gravitacional y encontrar la fuerza gravitacional en todos los puntos del espacio. 
