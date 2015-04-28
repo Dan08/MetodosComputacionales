@@ -84,4 +84,3 @@ cat(cbind(iris_pred,iris.testLabels))
 # using gmodels
 CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)
 
-
