@@ -1,6 +1,10 @@
 # References
 
 
+## Repositories
+
+[Machine Learning using Python and SKLEARN](https://github.com/jakevdp/PythonLectures)
+
 ## Books
 
 - A Course in Machine Learning, Hal Daumé III, 2012, [link](http://ciml.info/)
