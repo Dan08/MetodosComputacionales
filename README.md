@@ -1,4 +1,3 @@
-Computational Methods
-============================
+# Métodos Computacionales
 
-Material for the Computational Methods Course at Uniandes
+Material del curso de Métodos Computacionales de Uniandes
