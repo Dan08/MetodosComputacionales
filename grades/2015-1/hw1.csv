@@ -3,7 +3,7 @@ ACOSTA PEÑALOZA,JOSE ALFONSO,30,4,0,0,0,0,0,34,"2a. Puso la extensión como .pn
 2b, 2d, 2c. No los hizo
 3. No los hizo"
 ALFONSO RODRIGUEZ,JAVIER CAMILO,30,10,5,15,15,20,2,97, 
-ALVIS NARVAEZ,ELKIN RAMON,27,2,3,15,15,7,0,69,"1. Copia los .sh a la carpeta de resultados_ajedrez/. Además hay un archivo extra (el twic1057.pgn) que esta fuera del rango de fechas. No se hace cd resultados_ajedrez/ por lo que no se encuentran los archivos.
+ALVIS NARVAEZ,ELKIN RAMON,29,9,3,15,15,18,0,89,"1. Copia los .sh a la carpeta de resultados_ajedrez/. Además hay un archivo extra (el twic1057.pgn) que esta fuera del rango de fechas. No se hace cd resultados_ajedrez/ por lo que no se encuentran los archivos.
 2. No se corre el script dentro de un script, esto lo hago yo: chmod u+x ElkinAlvis_resultados.sh y ./ElkinAlvis_resultados.sh. No se hace cd resultados_ajedrez/ por lo que no se encuentran los archivos. (Esto afecta todo el script, sin embargo se resta solo en el 2a). 
 2b. Se hace wc -l al archivo de events_desc.txt, sin embargo se le agregan mas lineas como estas: Eventos organizados por numero de frecuencia descendente: y ""Frecuencia""  ""Evento"", lo que hace que no sea el numero correcto.
 2c, 2d. No es necesario mostrar los archivos creados, solo crearlos.
