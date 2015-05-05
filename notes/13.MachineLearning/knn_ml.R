@@ -7,7 +7,6 @@
 # install_github('hadley/ggplot2')
 # install_github('hadley/dplyr')
 # install_github('hadley/ggvis')
-# install_github('hadley/dplyr')
 
 library(ggvis)
 library(dplyr)
@@ -79,7 +78,7 @@ iris_pred <- knn(train = iris.training, test = iris.test, cl = iris.trainLabels,
 
 #STEP6: Measure Performance
 #visual inspection
-cat(cbind(iris_pred,iris.testLabels))
+cbind(iris_pred,iris.testLabels)
 
 # using gmodels
 CrossTable(x = iris.testLabels, y = iris_pred, prop.chisq=FALSE)
