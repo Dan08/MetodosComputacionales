@@ -5,7 +5,7 @@ ALFONSO RODRIGUEZ,JAVIER CAMILO,25,15,12,4,5,12,8,10,91,"1. No se debería demor
 1d. La grafica no da así. 
 1e. Lo mejor es que se llame makefile para solo hacer make.
 2. Perfecto , muy bien comentado todo"
-ALVIS NARVAEZ,ELKIN RAMON,0,0,0,0,0,12,7,8,17,"No subieron el link del repositorio a Sicuaplus (-10). El ultimo commit es el 9 de abril, la tarea era para el 7
+ALVIS NARVAEZ,ELKIN RAMON,0,0,0,0,0,12,7,8,22,"No subieron el link del repositorio a Sicuaplus (-5). El ultimo commit es el 9 de abril, la tarea era para el 7
 1. No lo hicieron
 2. En ningún punto se compara el resultado con la función integrate de R."
 AVELLANEDA FRANCO,JOSE DAVID,,,,,,,,,0,
@@ -17,7 +17,7 @@ CIFUENTES PARDO,JESUS DAVID,23,13,13,8,5,11,8,10,91,"1. Ningun .py corre, se par
 2. como sugerencia implementar muchos más puntos para hacer que converja más hacia el valor de la integral "
 DUQUE SIERRA,CAROLINA,25,15,15,10,5,12,8,10,100,"1. Muy buen trabajo. 
 2. Buena manera de mostrar la evolución de los errores"
-GONGORA BLANCO,DANIEL ESTEBAN,0,0,0,0,0,12,7,8,17,"No subieron el link del repositorio a Sicuaplus (-10). El ultimo commit es el 9 de abril, la tarea era para el 7
+GONGORA BLANCO,DANIEL ESTEBAN,0,0,0,0,0,12,7,8,22,"No subieron el link del repositorio a Sicuaplus (-5). El ultimo commit es el 9 de abril, la tarea era para el 7
 1. No lo hicieron
 2. En ningún punto se compara el resultado con la función integrate de R."
 GONZALEZ LOZANO,SANDRA JIMENA,,,,,,,,,0,
@@ -32,14 +32,14 @@ PATIÑO PAZ,CARLOS MIGUEL,25,15,12,4,5,12,8,10,91,"1. No se debería demorar tan
 1d. La grafica no da así. 
 1e. Lo mejor es que se llame makefile para solo hacer make.
 2. Perfecto , muy bien comentado todo"
-QUIROGA FONSECA,VALENTINA,17,8,8,4,5,12,8,8,70,"No subieron el link del repositorio a Sicuaplus (-10).
+QUIROGA FONSECA,VALENTINA,17,8,8,4,5,12,8,8,65,"No subieron el link del repositorio a Sicuaplus (-5).
 1. A pesar de estar ordenado el código (felicitaciones), no hay comentarios que ayuden a determinar cuáles son sus respuestas a cada uno de los incisos a,b,c.
 1a. No compila correctamente. (-8). Sin comentarios es difícil entender exactamente el procedimiento.
 1b,c. Parece bien planteado, pero los resutlados numéricos son extraños. Nuevamente, no está comentado, lo cual hace muy difícil adivinar qué quisieron hacer (-7,-7)
 1d. La grafica está mal. 
 1e. Lo mejor es que se llame makefile para solo hacer make.
 2c. se usó un intervalo de integración muy corto, la integral va de 2 a infinito y no se compara con integrate explícitamente"
-SANCHEZ ISAZA,CARLOS ARTURO,17,8,8,4,5,12,8,8,70,"No subieron el link del repositorio a Sicuaplus (-10).
+SANCHEZ ISAZA,CARLOS ARTURO,17,8,8,4,5,12,8,8,65,"No subieron el link del repositorio a Sicuaplus (-5).
 1. A pesar de estar ordenado el código (felicitaciones), no hay comentarios que ayuden a determinar cuáles son sus respuestas a cada uno de los incisos a,b,c.
 1a. No compila correctamente. (-8). Sin comentarios es difícil entender exactamente el procedimiento.
 1b,c. Parece bien planteado, pero los resutlados numéricos son extraños. Nuevamente, no está comentado, lo cual hace muy difícil adivinar qué quisieron hacer (-7,-7)
