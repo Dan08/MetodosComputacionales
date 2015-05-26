@@ -1,0 +1,108 @@
+% Metodos Computacionales Syllabus
+% Curso vacaciones 2015
+\documentclass[letterpaper,10pt,onecolumn]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[intlimits]{amsmath}
+\usepackage{hyperref}
+\usepackage{amsfonts}
+\usepackage{amscd}
+\usepackage{amssymb}
+\usepackage{natbib}
+\usepackage[spanish]{babel}
+\usepackage[absolute]{textpos} 
+\usepackage[pdftex]{color,graphicx}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textwidth}{490pt}
+\setlength{\textheight}{680pt}
+\setlength{\topmargin}{-40pt}
+\addtolength{\hoffset}{-0.3cm}
+\usepackage{pifont}
+\usepackage{xcolor}
+
+\hypersetup{%
+  colorlinks=true,% hyperlinks will be coloured
+  urlcolor=blue
+}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{flushleft}
+
+%\includegraphics[width=490pt]{header.png}\\[0.5cm]
+
+\textsc{\huge Métodos Computacionales}\\[0.01cm]
+
+%\Large \textsc{Programa}\\[0.1cm]
+\normalsize (FISI 2028) \\
+Curso de vacaciones 2015
+
+\end{flushleft}
+
+		\begin{textblock*}{20mm}(140mm,15mm)
+  			\includegraphics[height=30 mm]{andes.png}
+		\end{textblock*}
+
+\noindent
+Profesor: Juan David Lizarazo, email: \textbf{jd.lizarazo10}\\
+Oficina: I113 // Horario de atención: martes de 8 a 10 AM. \\ 
+\vspace{0.3cm}
+
+\hfill\begin{minipage}{\dimexpr\textwidth-3cm}
+\begin{flushright}\textit{``Computers are incredibly fast, accurate and stupid. On the other hand, a well trained operator as compared with a computer is incredibly slow, inaccurate and brilliant.'' Together they are powerful beyond imagination.}\end{flushright}
+\end{minipage}
+
+\noindent \\[-0.5cm]
+\begin{flushright}\textsc{$\approx$ Leo Cherne - 1969}\end{flushright}
+
+\vspace{0.1cm}
+
+En nuestro curso queremos aprender métodos para resolver diferentes problemas numéricos e implementarlos en algún lenguaje de programación para resolver problemas de interés. En ocasiones vamos a tomar datos del mundo ``real'' y en otras del mundo simulado pero siempre vamos a estar interesados en las formas de procesarlos y visualizarlos, y en extraer información de ellos. Para ello vamos a refinar las herramientas computacionales que ya conocemos y a aprender otras nuevas: un poco más de \verb+Python+ y \verb+Bash+, GitHub para colaborar al estilo moderno, y algo de \verb+C+ entre otras. Ayudados de nuevas herramientas vamos a explorar el interesante mundo que se pone a nuestro alcance: desde los misterios de $\pi$, pasando por la fabulosa internet y hasta el movimiento del sistema solar.
+
+\vspace{0.3cm}
+\noindent El curso va a evaluarse a partir de tres items: talleres (60\%), exámenes cortos (25\%) y un proyecto final (15\%). Los talleres cada semana y los exámenes cada dos.
+
+\noindent Para coordinar nuestras actividades contamos con \verb+Sicua+ y con un \href{https://github.com/ComputoCienciasUniandes/MetodosComputacionales}{repositorio} en GitHub.
+
+% Este curso se ve al mismo tiempo que el \emph{Laboratorio de Métodos Computationales}. El objetivo del laboratorio es tener más tiempo para practicar todos lo visto en clase. 
+\vspace{0.5cm}
+
+\noindent\textbf{Semana 1:} \verb+bash+, \verb+wget+, \verb+curl+, \verb+awk+, \verb+sed+, \verb+grep+, \verb+sort+, expresiones regulares, \verb+ssh+, \verb+sftp+, \verb+vi+.
+
+\noindent\textbf{Semana 2:} C, \verb+gcc+, Python, Markdown, testing and debugging, complejidad computacional, manejo de excepciones, \verb+make+, error e incertidumbre en cálculos numéricos.
+
+\noindent\textbf{Semana 3:} algebra lineal, \verb+git+, GitHub individual, IPython, herramientas de visualización.
+
+\noindent\textbf{Semana 4:} interpolación, testing and debugging, GitHub en colaboración, análisis de Fourier, procesamiento de imágenes.
+
+\noindent\textbf{Semana 5:} integración y diferenciación numéricas, ecuaciones diferenciales ordinarias (1er orden), NumPy.
+
+\noindent\textbf{Semana 6:} ecuaciones diferenciales ordinarias (2do orden).
+
+\noindent\textbf{Semana 7:} ecuaciones diferenciales parciales.
+
+\noindent\textbf{Semana 8:} métodos Monte Carlo, generación de números pseudoaleatorios.
+
+\noindent\textbf{Semana 9:} proyecto final.
+
+\vspace{0.1cm}
+\noindent\textbf{Temas opcionales:} R, Machine Learning, métodos de optimización, dinámica molecular, geometría computacional, uso del clúster, Zotero, Pandas, procesamiento en paralelo.
+
+\section*{Bibliografía}
+
+\begin{itemize}
+\item  R. Landau, M. Paez, C. Bordeianu. \href{http://www.compadre.org/psrc/items/detail.cfm?ID=11578}{A Survey of Computational Physics: Python Multimodal eBook}, 2012.
+%\ding{168} \ding{171}
+\item  J. Guttag. \textit{Introduction to Computation and Programming Using Python}, 2013.
+\item  A. Tveito, H. Langtangen, B. Nielsen, X. Cai  \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-3-642-11299-7}{Elements of Scientific Computing}, 2010.
+\item S. Chacon, B. Straub. \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-1-4302-1834-0}{Pro Git}, 2014.
+\item B. Stephenson. \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-3-319-14240-1}{The Python Workbook}, 2015.
+\item C. Johnson. \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-1-4302-1998-9}{Pro Bash Programming}, 2009.
+\item I. Horton. \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-1-4302-0243-1}{Beginning C}, 2006.
+\item B. Kernighan \& D. Ritchie. \textit{The C programming language.}
+\item P. Scherer, \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-3-642-13990-1}{Computational Physics}, 2010.
+\end{itemize}
+
+%\item H. Langtangen. \href{http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-3-540-73916-6}{Python Scripting for Computational Science}, 2008.
+%\item\url{http://software-carpentry.org/}
+
+\end{document}
