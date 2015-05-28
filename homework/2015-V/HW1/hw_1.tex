@@ -50,25 +50,23 @@ Mayo de 2015
   \includegraphics[width=3cm]{logoUniandes.png}
 \end{textblock*}
 
-\begin{textblock*}{40mm}(161mm,20mm)
+\begin{textblock*}{40mm}(164mm,20mm)
   \includegraphics[width=3cm]{logoUniandes.png}
 \end{textblock*}
 
 \vspace{0.5cm}
 
-Los 3 scripts de solución de este taller deben ser presentados en un solo archivo con nombre \verb+NombreApellido_HW1.zip+ en \textbf{sicuaplus}. Por ejemplo: yo deber\'ia subir un archivo llamado \verb"SebastianPerez_HW1.zip"
-
-En cada parte del ejercicio se entrega 1/3  de los puntos si el código propuesto es razonable, 1/3 si se puede ejecutar y 1/3 si entrega resultados correctos.
+La solución a este taller debe cargarse a Sicua en un solo archivo comprimido con nombre \verb+NombreApellido_HW1.zip+ y debe contener: \verb+arxiv.sh, bruno.sh, stardate.sh, lacita.txt+. Es requisito que en los scripts se pongan comentarios que expliquen lo que se está haciendo.
 
 \vspace{0.5cm}
 
 \begin{questions}
  
-\question[45] {\bf{Un pequeño robot}}
+\question[15] {\bf{Una pequeña araña}}
 
-El \href{http://en.wikipedia.org/wiki/ArXiv}{arXiv} es un repositorio de publicaciones científicas. Elija un tema y usando \verb+curl+, \verb+grep+, \verb+wc+, \verb+echo+ y \verb+sed+ escriba un script llamado arxiv.sh en \verb+bash+ que reciba una palabra clave y de regreso muestre la cantidad y el título de los nuevos artículos (\verb+http://arxiv.org/list/tema/new+) que contienen la palabra clave.
+El \href{http://en.wikipedia.org/wiki/ArXiv}{arXiv} es un repositorio de publicaciones científicas. Elija un tema y usando \verb+curl+, \verb+grep+, \verb+wc+, \verb+echo+ y \verb+sed+ escriba un script en \verb+bash+ llamado \verb+arxiv.sh+  que reciba una palabra clave y de regreso muestre la cantidad y el título de los nuevos artículos (\verb+http://arxiv.org/list/[el_tema]/new+) que contienen la palabra clave.
 
-Por ejemplo, si se eligiera el tema de mecánica cuántica con la palabra clave \textbf{entanglement} el resultado al hacer \verb+./arxiv.sh entanglement+ debe ser similar al siguiente.
+Por ejemplo, si se eligiera como tema la mecánica cuántica con la palabra clave \textbf{entanglement} el resultado al hacer \verb+./arxiv.sh entanglement+ debe ser similar al siguiente.
 
 \begin{verbatim}
                 __  ___       
@@ -89,23 +87,23 @@ Articles found: 2
 =====================================
 \end{verbatim}
 
-\question[10]{\bf{Planetas extrasolares}}
+\question[25]{\bf{Planetas extrasolares}}
 
-El archivo \href{keplerurl}{kepler.csv} tiene información astronómica sobre la mayoría de planetas extrasolares conocidos a la fecha con la especificación de las columnas en el archivo \href{keplerurl}{keplerREADME}. Escriba un script de \verb+bash+ llamado \verb+bruno.sh+ que haga lo siguiente.
-
-\begin{parts}
-	\part Imprimir la cantidad de planetas incluidos en el catálogo.
-	\part Mostrar el nombre y la cantidad de planetas con una masa menor a una centésima de la masa de Júpiter.
-	\part Determinar el planeta con el menor periodo orbital.
-\end{parts}
-
-\question[10]{\bf{Historia estelar}}
-
-El archivo \href{http://www.google.com}{hyg.csv} tiene información astronómica sobre las estrellas más brillantes en el firmamento. El archivo \href{http://www.google.com}{worldhistory.tsv} tiene dos columnas: la primera el año y la segunda eventos históricos.
+El archivo \href{https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/homework/2015-V/HW1/kepler.csv}{kepler.csv} tiene información astronómica sobre la mayoría de planetas extrasolares conocidos a la fecha con la especificación de las columnas en el archivo \href{https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/homework/2015-V/HW1/keplerREADME}{keplerREADME}. Escriba un script de \verb+bash+ llamado \verb+bruno.sh+ que haga lo siguiente.
 
 \begin{parts}
-	\part Escriba un script de \verb+bash+ llamado \verb+stardate.sh+ que reciba un año y de regreso muestre los eventos históricos del año junto con las estrellas cuya luz ha viajado tantos años como el tiempo transcurrido desde el año entregado hasta el 2015.
+	\part[5] Imprimir la cantidad de planetas incluidos en el catálogo. Usar \verb+awk+, \verb+wc+ y artimética con doble paréntesis.
+	\part[10] Mostrar el nombre y la cantidad de planetas con una masa menor a una centésima de la masa de Júpiter. Usar \verb+awk+ y \verb+wc+.
+	\part[10] Determinar el planeta con el menor periodo orbital. Usar \verb+sort+ con las siguientes opciones puede ser de utilidad \verb+sort --field-separator="," --key=6 -n+.
 \end{parts}
+
+\newpage
+
+\question[30]{\bf{Historia estelar}}
+
+El archivo \href{https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/homework/2015-V/HW1/hyg.csv}{hyg.csv} tiene información astronómica sobre las estrellas más brillantes en el firmamento. El archivo \href{https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/homework/2015-V/HW1/worldhistory.tsv}{worldhistory.tsv} tiene dos columnas: la primera el año y la segunda eventos históricos del año. Las columnas del archivo \verb+tsv+ están separadas por \verb+TAB+.
+
+Escriba un script de \verb+bash+ llamado \verb+stardate.sh+ que reciba un año $x$ y de regreso muestre los eventos históricos del año junto con la orientación (RA y DEC) de estrellas (5 a lo sumo) cuya luz haya viajado entre $(2015-x)$ y $(2015-x)+1$ años y en consecuencia sea contemporánea con los eventos históricos mostrados.
 
 \begin{verbatim}
 ./stardate.sh 1983
@@ -142,7 +140,16 @@ RA/º    DEC/º   HIP No.
 4.63    52.89   21553 
 ############################################
 \end{verbatim}
+\newpage
+\question[30] {\bf{Compufísica de noche}}
 
+Cuando Compufísica esté cerrada (antes de las 7 AM o después de las 7 PM) lleve a cabo las siguientes tareas.
+\begin{parts}
+	\part[15] Haga \verb+ssh+ a compufi3 y ejecute la siguiente línea de código. \\
+	\verb+echo "Hola Juan." | mail -s "Taller1" j-lizara+ \\
+	\begin{flushright}{\bf{Tiene}} que ser {\bf{compufi3}}.\end{flushright}
+	\part[15] Inicie una sesión \verb+sftp+ a alguna máquina de Compufísica, ingrese a la carpeta \\ \verb+/usuarios/homenfs7/taller1/+ y descargue con \verb+get+ el archivo con su nombre a su computador, abra la imagen y copie el texto a un archivo llamado \verb+lacita.txt+. 
+\end{parts}
 \end{questions}
 
 \end{document}
