@@ -1,13 +1,13 @@
 # Orbital parameters of Jovian Satellites
-#Name,a / Jovian Radii,T / days
-Io,5.91,1.769138
-Europa,9.40,3.551181
-Ganymede,14.97,7.154553
-Callisto,26.33,16.689018
+# Name,a / Jovian Radii,T / days
 Metis,1.79,0.294779
 Adrastea,1.80,0.298260
 Amalthea,2.54,0.498179
 Thebe,3.11,0.6745
+Io,5.91,1.769138
+Europa,9.40,3.551181
+Ganymede,14.97,7.154553
+Callisto,26.33,16.689018
 Themisto,105.00,130.02
 Leda,156.2,240.92
 Himalia,160.3,250.5662
