@@ -1,5 +1,5 @@
 # Hands-on 1
-29-May-2015
+*29-May-2015*
 
 ##git
 
@@ -12,6 +12,6 @@
 6. Escriba un script de `bash` que imprima una matrix cuadrada de 5 X 5 con la secuencia de los primeros 25 enteros de izquierda a a derecha y de arriba a abajo.
 7. Escriba un script de `bash` que determine si en la portada de ElTiempo aparece alguna palabra clave elegida.
 
-##otros
+##Otros
 
 12. Explore la utilidad de `pandoc` y haga un resumen de su funcionalidad.
