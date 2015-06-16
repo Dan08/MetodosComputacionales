@@ -12,6 +12,7 @@ Material del curso de Métodos Computacionales de Uniandes
 
 ## HandsOn
 
+* [HandsOn-7](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-7.md) (16-Jun-2015)
 * [HandsOn-6](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-6.md)
 * [HandsOn-5](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-5.md)
 * [HandsOn-4](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-4.md)
