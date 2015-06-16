@@ -15,7 +15,7 @@
 	| Ganymede	| 1070.4    | 7.154 |
 	| Callisto	| 1882.7    | 16.689 |
 
-3. La tabla mostrada abajo tiene información sobre el campo magnético de un dipolo magnético a lo largo de su eje, haga un ajuste por mínimos cuadrados de acuerdo a un modelo teórico adecuado y calcule la magnitud del [momento magnético](https://en.wikipedia.org/wiki/Magnetic_dipole)  del imán (en A m^2) y una tabla para B(x) con 100 renglones uniformemente espaciada entre el x=4.1cm y x=11.1cm. Haga una gráfica con los datos y el ajuste encontrado. **log**
+3. La tabla mostrada abajo tiene información sobre el campo magnético de un dipolo magnético a lo largo de su eje, haga un ajuste por mínimos cuadrados de acuerdo a un modelo teórico adecuado y calcule la magnitud del [momento magnético](https://en.wikipedia.org/wiki/Magnetic_dipole)  del imán (en A m^2) y una tabla para B(x) con 100 renglones uniformemente espaciada entre el x=2.3cm y x=4.3cm. Haga una gráfica con los datos y el ajuste encontrado. **log**
 
 
 	| x/cm        | B/uT           |
