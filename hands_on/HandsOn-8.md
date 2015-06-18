@@ -13,7 +13,7 @@
 
 3. Haga una gráfica que muestre aproximaciones sucesivas de Fourier a la función periódica definida por la siguiente gráfica:
 
-![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/nicewave.png =700x).
+![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/nicewave.png?raw=true =700x).
 
 Para hallar los coeficientes utilice integrales numéricas utilizando las rutinas de `scipy.integrate`.
 
