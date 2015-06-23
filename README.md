@@ -12,7 +12,8 @@ Material del curso de Métodos Computacionales de Uniandes
 
 ## HandsOn
 
-* [HandsOn-9](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-9.md) (23-Jun-2015)
+* [HandsOn-10](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-10.md) (23-Jun-2015)
+* [HandsOn-9](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-9.md) (19-Jun-2015)
 * [HandsOn-8](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-8.md) (17-Jun-2015)
 * [HandsOn-7](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-7.md) (16-Jun-2015)
 * [HandsOn-6](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/hands_on/HandsOn-6.md)
@@ -26,6 +27,7 @@ Material del curso de Métodos Computacionales de Uniandes
 
 ## Tareas
 
+* [Tarea 4](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW4/HW4.pdf)
 * [Tarea 3](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW3/HW3.pdf)
 * [Tarea 2](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW2/HW2.pdf)
 * [Tarea 1](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/homework/2015-V/HW1/HW1.pdf) - [ SOL](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/tree/master/homework/2015-V/HW1/HW1-Sol)
