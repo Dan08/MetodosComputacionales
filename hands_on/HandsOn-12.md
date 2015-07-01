@@ -3,7 +3,7 @@
 *30-Jun-2015*
 
 
-## ODE
+## Resonancia Magnética Nuclear
 
 1. Resuelva numéricamiente la ecuación de Schrödinger para la [resonancia magnética nuclear](https://en.wikipedia.org/wiki/Two-state_quantum_system#Evolution_in_a_Time-dependent_Field:_Nuclear_magnetic_resonance):
 
@@ -16,3 +16,5 @@
 	![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/eqmagres.png? raw=true =200x).
 
 	Encuentre la solución en el intervalo de tiempo [0,3], grafique las probabilidades correspondientes a |+> y |->, verifique la evolución unitaria y estime el periodo de las probabilidades. Use RK4 con un Δt = 1e-4, tenga en cuenta que la ecuación diferencial depende del tiempo.
+
+	![](https://raw.githubusercontent.com/ComputoCienciasUniandes/MetodosComputacionales/master/hands_on/figures/magres.png? raw=true =400x).

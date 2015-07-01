@@ -29,6 +29,7 @@ Material del curso de Métodos Computacionales de Uniandes
 
 ## Tareas
 
+* [Tarea 5](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW5/HW5.pdf)
 * [Tarea 4](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW4/HW4.pdf)
 * [Tarea 3](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW3/HW3.pdf)
 * [Tarea 2](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW2/HW2.pdf)
@@ -37,6 +38,16 @@ Material del curso de Métodos Computacionales de Uniandes
 ---
 
 ## Referencias
+
+* [**SciPy Reference Guide 0.15.1**, the Scipy team](http://docs.scipy.org/doc/scipy/scipy-ref-0.15.1.pdf)
+
+* [**Numpy Reference Guide 1.9.1**, the Numpy community](http://docs.scipy.org/doc/numpy/numpy-ref-1.9.1.pdf)
+
+* [**Matplotlib 1.4.3**, J. Hunter, D. Dale, E. Firing, M. Droettboom](http://matplotlib.org/Matplotlib.pdf)
+
+* [**Ordinary Differential Equations**, H. Logemann & E. P. Ryan](http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007%2F978-1-4471-6398-5)
+
+* [**Fast Fourier Transforms: Algorithms and Applications**, Rao, Kim & Hwang](http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007%2F978-1-4020-6629-0)
 
 * [**Introduction to Computation and Programming Using Python**, J. Guttag.](http://mitpress.mit.edu/books/introduction-computation-and-programming-using-python-0)
 
@@ -54,8 +65,4 @@ Material del curso de Métodos Computacionales de Uniandes
 
 * [**Explorations in Monte Carlo Methods**, R. Shonkwiler, F. Mendivil.](http://link.springer.com.ezproxy.uniandes.edu.co:8080/book/10.1007\%2F978-0-387-87837-9)
 
-* [**Matplotlib 1.4.3**, J. Hunter, D. Dale, E. Firing, M. Droettboom](http://matplotlib.org/Matplotlib.pdf)
-
-* [Software carpentry](http://software-carpentry.org/)
-
-
+* [**Software carpentry**](http://software-carpentry.org/)
