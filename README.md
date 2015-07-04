@@ -29,6 +29,7 @@ Material del curso de Métodos Computacionales de Uniandes
 
 ## Tareas
 
+* [Tarea 6](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW6/HW6.pdf)
 * [Tarea 5](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW5/HW5.pdf)
 * [Tarea 4](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW4/HW4.pdf)
 * [Tarea 3](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/raw/master/homework/2015-V/HW3/HW3.pdf)
