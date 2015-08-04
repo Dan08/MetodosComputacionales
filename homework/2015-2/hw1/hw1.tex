@@ -1,0 +1,97 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015, curso de vacaciones
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen en posiciones arbitrarias
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Tarea 1 - \textsc{Python b\'asico}\\
+2015-08-04.\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(164mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 13 de Agosto del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del s\'abado 8 de Agosto del 2015 se calificar\'a
+el taller sobre 125 puntos. 
+\noindent
+Los tres archivos c\'odigo fuente deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw1.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw1.zip".
+
+\vspace{0.5cm}
+
+\begin{questions}
+ 
+\question[20(25)] {\bf{Una varilla sobre una pared}}
+
+Una varilla descansa inclinada sobre una pared y empieza a
+deslizarse. Escriba un c\'odigo en Python (\verb"varilla.py") que haga
+una gr\'afica de la trayectoria que describe el centro de masa de la
+varilla. Puede asumir (aunque no sea f\'isicamente cierto) que la
+varilla nunca pierde contacto con la pared. 
+
+
+\question[30(40)]{\bf{Un c\'irculo que pasa por tres puntos}}
+
+Escriba un programa en Python (\verb"circulo.py") que lea un archivo de
+texto con el siguiente formato:
+
+\begin{verbatim}
+45.0 23.0
+23.0 3.0
+34.0 23.0
+\end{verbatim}
+%
+donde cada par de valores representa las coordenadas cartesianas de un
+punto para preparar una gr\'afica que muestre los tres puntos y el
+c\'irculo que pasa por esos tres puntos. El programa debe detenerse e
+imprimir un mensaje de error si el archivo no tiene tres puntos o si
+los puntos se encuentran sobre una l\'inea recta. El programa debe
+poder ejecutarse como \verb"python circulo.py archivo" donde
+\verb"archivo" es el nombre del archivo donde est\'an los puntos. 
+
+\question[50(60)]{\bf{El juego de la vida de Conway}}
+
+El juego de la vida de Conway es el ejemplo m\'as famoso de un
+aut\'omata celular
+\url{https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life}.
+
+Escriba un c\'odigo en Python (\verb"conway.py") que haga 200
+iteraciones del juego de la vida sobre un tablero cuadrado de 500x500
+pixeles con condiciones iniciales aleatorias. El resultado debe ser un
+GIF animado de nombre \verb"conway.gif".
+ 
+
+
+\end{questions}
+
+\end{document}
