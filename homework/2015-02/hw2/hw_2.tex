@@ -129,7 +129,7 @@ theta_final  = 240
 phi_final = 10 
 n_points = 1000 # numero de puntos para la trayectoria
 camino_theta, camino_phi = sf.camino(theta_inicial, phi_inicial,
-theta_final phi_final)
+theta_final phi_final, n_points)
 \end{verbatim}
 
 \question[40 (50)] {\bf{Cambio de coordenadas}}
@@ -153,7 +153,7 @@ llamarse desde python de la siguiente manera
 import coordenadas as coor
 filename = 'hipparcos.csv'
 latitud = +45.0 # en grados
-longitud = -34.0 $ en grados
+longitud = -34.0 # en grados
 mes = 10
 dia = 14
 anno = 2014
