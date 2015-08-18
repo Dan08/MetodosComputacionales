@@ -1,0 +1,172 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 2 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Agosto 18 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 27 de Agosto del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del s\'abado 22 de Agosto del 2015 se calificar\'a
+el taller sobre 130 puntos. 
+\noindent
+Los tres archivos c\'odigo fuente deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw2.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw2.zip".
+\noindent
+Todas los algoritmos deben ser implementados con funciones b\'asicas
+de python. Librer\'ias externas solamente son permitidas al momento de
+escribir/leer datos o hacer gr\'aficas.
+
+
+\begin{questions}
+
+\question[30 (40)] {\bf{Barajando Arreglos}} En este punto van a
+implementar un algoritmo para desordenar arreglos. 
+
+\begin{parts}
+\part[20 (25)] Escriba una funci\'on que desordene un arreglo de \emph{n}
+elementos de manera aleatoria (puede pensar en una baraja de cartas,
+por ejemplo). La funci\'on debe poder utilizarse desde python de la
+siguiente manera:
+\begin{verbatim}
+import barajando as baraja
+import numpy as np
+a = np.arange(10) #este es un array inicial de 10 elementos
+b = baraja.baraja(a) #b es el array barajado
+\end{verbatim}
+\part[10 (15)] Escriba una funci\'on para visualizar la efectividad de
+este algoritmo. La funci\'on debe generar una matriz $A_{ij}$ donde el
+elemento $ij$ corresponde al n\'umero de veces que el elemento que
+inicialmente se encuentra en la posici\'on $i$ termina en la
+posici\'on $j$ si se hicieran muchas iteraciones desordenando el array.  La
+funci\'on debe poder utilizarse desde python de la siguiente manera.
+
+\begin{verbatim}
+import barajando as baraja
+matriz_a = baraja.matriz(baraja.baraja, n_lado_matriz=100, n_iter=10000)
+\end{verbatim}
+\end{parts}
+
+
+\question[30 (40)] {\bf{Volando sobre una esfera}}
+
+Los aviones que vuelan largas distancias internacionales buscan
+minimizar su consumo de combustible. Para esto la ruta de vuelo debe
+ser la m\'as corta entre los puntos de partida y llegada.  El objetivo
+de este ejercicio es escribir un programa que calcule las coordenadas
+de esa trayectoria para dos puntos arbitrarios sobre la Tierra. 
+
+Para simplificar el problema supondremos que la Tierra es
+perfectamente esf\'erica.  Adem\'as vamos a utilizar los \'angulos
+$\theta$ (polar) y $\varphi$ (ecuatorial) para describir las
+coordenadas sobre un punto de la esfera .
+
+Escriba una funci\'on que dados dos puntos arbitrarios sobre la
+esfera (parametrizados por $\theta$ y $\varphi$) calcula la
+trayectoria m\'as corta que entre esos dos puntos. La funci\'on debe
+poder utilizarse de la siguiente manera 
+
+
+\begin{verbatim}
+import esfera as sf
+theta_inicial = 0 # en grados
+phi_inicial = 30 # en grados
+theta_final  = 240
+phi_final = 10 
+n_points = 1000 # numero de puntos para la trayectoria
+camino_theta, camino_phi = sf.camino(theta_inicial, phi_inicial,
+theta_final phi_final)
+\end{verbatim}
+
+\question[40 (50)] {\bf{Cambio de coordenadas}}
+Como vemos cada noche las estrellas realizan un movimiento aparente en
+el cielo, en realidad este movimiento se debe a la rotación de la
+tierra sobre su propio eje y alrededor del Sol. En el catalogo
+\verb+hipparcos.csv+ \footnote{\url{https://github.com/ComputoCienciasUniandes/HerramientasComputacionalesDatos/tree/master/data/Hipparcos}} 
+se encuentra la siguiente información  \verb+id AR DEC Mag Distance+
+de cada estrella, Donde  \verb+AR+ y \verb+DEC+ son las coordenadas
+ecuatoriales \footnote{\url{http://es.wikipedia.org/wiki/Coordenadas_ecuatoriales}}
+de las estrellas. \verb+Mag+ Esta relacionado con la luminosidad de la
+estrella y \verb+Distance+ es la distancia a la estrella en
+parsecs \footnote{\url{http://es.wikipedia.org/wiki/Parsec}}. 
+
+Escriba una funci\'on que transforme las
+coordendas del sistema ecuatorial (\verb+AR+ y \verb+DEC+) a las
+coordenadas horizontales de \verb+Altura+ y \verb+Azimut+. La
+funci\'on se debe poder utilizar sobre los datos de Hipparcos y
+llamarse desde python de la siguiente manera 
+\begin{verbatim}
+import coordenadas as coor
+filename = 'hipparcos.csv'
+latitud = +45.0 # en grados
+longitud = -34.0 $ en grados
+mes = 10
+dia = 14
+anno = 2014
+hora = 20
+minutos = 10
+segundos = 30
+hipp_ra, hipp_dec = coor.load_data(filename)
+hipp_alt, hipp_az = coor.ec2hor(hipp_ra, hipp_dec, 
+lat=latitud, long=longitud, y=anno, m=mes, d=dia, h=hora, min=minutos,
+s=segundos)  
+\end{verbatim}
+
+
+
+\end{questions}
+\end{document}
