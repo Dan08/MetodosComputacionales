@@ -1,0 +1,140 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 3 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Septiembre 1 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 11 de Septiembre del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del domingo 6 de Septiembre 2015 se calificar\'a
+el taller sobre 120 puntos. 
+\noindent
+Los tres archivos c\'odigo fuente deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw2.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw2.zip".
+\noindent
+Todas los algoritmos deben ser implementados con funciones b\'asicas
+de python. Librer\'ias externas solamente son permitidas al momento de
+escribir/leer datos o hacer gr\'aficas.
+
+\begin{questions}
+
+\question[25 (35)] {\bf{Patrones Ocultos}} El siguiente archivo
+\verb"hands_on/notas_fisicaII_201410.dat" del repositorio
+\verb"MetodosComputacionalesDatos" contiene datos de notas finales de
+un curso de F\'isica II. Las tres primeras columnas corresponden a
+parciales, la siguiente a la nota en complementaria y la quinta al
+examen final. Haga un an\'alisis de PCA sobre esas cinco columnas de
+tal manera que se puedan imprimir de manera ordenada los autovalores y
+autovectores. El an\'alisis solamente debe tener en cuenta a las
+personas que presentaron todos los parciales.
+
+\begin{verbatim}
+import notas
+valores, vectores = notas.pca("notas_fisica_II_201410.dat")
+for val, vec in zip(valores, vectores):
+    print val, vec
+\end{verbatim}
+
+
+\question[25 (35)] {\bf{Ciclo Solar}}
+El siguiente archivo \verb"hands_on/solar/monthrg.dat" tiene datos del
+n\'umero de manchas solares cada mes desde 1610. La primera columna
+corresponde al a\~no de la medici\'on, la segunda al mes, la tercera
+al n\'umero de d\'ias que se pudo observar el n\'umero de manchas y la
+cuarta al n\'umero promedio de manchas. Si hay un \verb"-99" en la
+cuarta columna quiere decir que el n\'umero de manchas promedio se
+desconoce para ese mes.
+
+Asumiendo que este ciclo puede describirse por la siguiente funci\'on:
+\begin{displaymath}
+f(t) = a\cos(2\pi t + b) + c
+\end{displaymath}
+donde $t$ es el tiempo en a\~nos, escriba una funci\'on que tome los
+datos y haga un ajuste por m\'inimos cuadrados a los par\'ametros
+libres de la siguiente manera
+
+\begin{verbatim}
+import numpy as np.
+import solar
+[a,b,c] = solar.ajuste("monthrg.dat", min=1900, max=1980)
+print a, b, c
+\end{verbatim}
+
+\question[50 (60)] {\bf{Caras en PCA}}
+Como aplicaci\'on del m\'etodo de PCA van a implementar rutinas
+sencillas para programas de reconocimiento facial.
+
+Vamos a tomar como punto de partida el conjunto de la base de datos de
+ATT
+\url{http://www.cl.cam.ac.uk/research/dtg/attarchive/facedatabase.html}. 
+
+Implemente una funci\'on que encuentre los autovalores y autovectores
+correspondientes a las caras en la base de datos y grafica las
+primeras $n$ (ordenadas en orden decreciente de importancia seg\'un
+los autovalores) en un archivo pdf. 
+
+La funci\'on debe funcionar de la siguiente manera
+\begin{verbatim}
+import caras
+[valores, vectores] = caras.pca(pathin="/home/forero/data/at")
+n_faces = 10
+caras.make_plot(valores, vectores, n=n_faces, fileout="eigenfaces.pdf")
+\end{verbatim}
+
+\end{questions}
+\end{document}
