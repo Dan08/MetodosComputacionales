@@ -1,0 +1,142 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 4 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Septiembre 15 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 2 de Octubre del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del domingo 20 de Septiembre 2015 se calificar\'a
+el taller sobre 130 puntos. 
+\noindent
+Cada punto debe tener la respuesta en un notebook de IPython/Jupyter por
+separado. Los notebooks deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw4.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw4.zip".
+
+\noindent
+Los archivos de datos necesarios se encuentran aqu\'i:
+
+\noindent
+\url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/tree/master/homework/2014-20/hw_5} 
+\begin{questions}
+
+
+
+\question[30 (40)] {\bf{Limpiando ruido (\verb"limpiando.ipynb")}} 
+
+
+En clase trabajamos el filtrado de una se\~nal unidimensional
+quit\'andole las frecuencias altas y dejando las frecuencias
+bajas. Ahora vamos a intentar algo similar con una imagen, es decir con
+una se\~nal bidimensional. Vamos a intentar dos cosas
+diferentes: en un caso dejar las frecuencias altas y en otro caso
+dejar las frecuencias bajas.
+
+Escriba un programa en Python que haga el filtrado de una imagen de dos maneras. La primera que deje pasar las frecuencias bajas; la segunda que deje pasar las frecuencias altas. 
+
+En ambos casos implemente un filtro suave. Ver la siguiente
+referencia: \url{http://paulbourke.net/miscellaneous/imagefilter/}. 
+
+Muestre los resultados de aplicar los filtros para las siguientes
+im\'agenes 
+\begin{itemize}
+\item \verb"full_moon.jpg"
+\item \verb"20_popc_cho009-1.tif"
+\item \verb"colesterol-1.tif" 
+\item \verb"ves_full_150_002-1.tif"
+\end{itemize}
+Cualitativamente hablando: ¿Qué hace cada filtro?. 
+
+
+
+\question[30 (40)] {\bf{Variabilidad estelar (\verb"variabilidad.ipynb")}}
+
+Datos de la intensidad de una estrella variable RR-Lyrae se encuentran
+en \verb"RR_Lyrae_template.dat". 
+
+\begin{itemize}
+\item[a)] (10 puntos) Escriba un programa en Python que calcule la
+  misma curva de intensidad cuando se toman en cuenta $N$
+  componentes de Fourier. 
+\item[b)] (10 (15) puntos) Prepare gr\'aficas de la curva
+  reconstru\'ida con $N\leq 10$ componentes (i.e. deben aparecer 10
+  curvas diferentes).   
+\item[c)] (10 (15) puntos)
+Prepara una gr\'afica de $\chi^2$ en funci\'on del n\'umero de
+componentes $N$ tomadas en cuenta al momento de hacer la
+reconstrucci\'on.   
+\end{itemize}
+
+
+\question[40 (50)] {\bf{C\'irculos (\verb"circulos.ipynb")}}
+
+En el archivo \verb"BAO.dat" se encuentran posiciones en un plano
+$x-y$. Estos puntos corresponden a la superposici\'on de diferentes
+c\'irculos m\'as un fondo de puntos distribuidos aleatoriamente a
+partir de una distribuci\'on homog\'enea. 
+
+Encuentre el di\'ametro de estos c\'irculos a partir de m\'etodos que
+utilicen la transformada de Fourier. 
+
+Ayuda:
+Funci\'on de autocorrelaci\'on \\ 
+\verb"http://mathworld.wolfram.com/Autocorrelation.html"\\
+\verb"http://mathworld.wolfram.com/Wiener-KhinchinTheorem.html"
+
+\end{questions}
+\end{document}
