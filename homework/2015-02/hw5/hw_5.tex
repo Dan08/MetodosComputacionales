@@ -1,0 +1,131 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-20
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{hyperref}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+
+\extraheadheight{-0.15in}
+
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 4 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Octubre 6 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 16 de Octubre del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del domingo 11 de Octubre 2015 se calificar\'a
+el taller sobre 120 puntos. 
+\noindent
+Esta tarea solamente vale el $10\%$ de la nota final (todas las otras
+tareas valen el $15\%$).
+\noindent
+Cada punto debe tener la respuesta en un c\'odigo fuente de C
+separado. Los c\'odigos deben subirse en un solo archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw5.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw5.zip".
+
+\noindent
+Los archivos de datos necesarios se encuentran aqu\'i:
+
+\noindent
+\url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/tree/master/homework/2014-20/hw_5} 
+\begin{questions}
+
+
+
+\question[50 (60)] {\bf{Precisi\'on de integraci\'on montecarlo}} 
+
+Implemente un m\'etodo montecarlo para calcular la siguiente integral
+\begin{displaymath}
+\int_{-5}^5 e^{-x^2}\mathrm{d}x.
+\end{displaymath}
+
+Escriba un programa en $C$ (\verb"montecarlo.c") que imprime en
+pantalla el valor de la integral y el n\'umero de puntos montecarlo a
+partir del cual la integral ha convergido por debajo de un valor $h$. 
+
+El programa debe poder ejecutarse como sigue
+
+\begin{verbatim}
+./montecarlo h
+\end{verbatim}
+donde \verb"h" es el valor de $h$ correspondiente.
+
+
+
+\question[50 (60)] {\bf{La funci\'on gamma}}
+
+Una funci\'on que aparece comunmente en c\'alculos f\'isicos es la
+funci\'on gama la cual est\'a definida por la siguiente integral.
+\begin{equation}
+\Gamma(a) = \int_{0}^{\infty} x^{a-1}e^{-x}\mathrm{d}x
+\end{equation}
+
+En primer lugar inspeccionen la forma del integrando haciendo
+gr\'aficas para $a=2,3,4$ en el intervalo $0<x<5$. Verifiquen
+anal\'iticamente que el m\'aximo se encuentra en $x=a-1$. Esto quiere
+decir que lo importante para la integral va a ser capturar bien la
+funci\'on alrededor de este m\'aximo.
+
+Para calcular esta integral indefinida ahora van a hacer el siguiente
+cambio de variable
+
+\begin{equation}
+z = \frac{x}{c+x}
+\end{equation}
+donde $c$ es una constante tal que el m\'aximo de la funci\'on ahora
+se encuentra en $z=1/2$.
+
+De esta manera ahora los l\'imites de la nueva integral son definidos.
+Otro cambio que deben tener en cuenta para hacer la integral tratable
+num\'ericamente es reescribir el t\'ermino $x^{a-1}$ como $e^{{a-1}\ln
+  x}$.
+
+Ahora s\'i, escriba un programa (\verb"factorial.c") en $C$ que
+imprima en pantalla el valor de esta integral para cualquier $a>0$. El
+ejecutable debe poder llamarse como 
+\begin{verbatim}
+./factorial a
+\end{verbatim}
+donde \verb"a" es el valor de la variable $a$. 
+
+Recuerde que para valores enteros de $a$, $\Gamma(a)=(a-1)!$
+
+
+\end{questions}
+\end{document}
