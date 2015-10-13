@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 float *reserva(int n_puntos);
-void print_array(float * array, int n_puntos);
+void print_array(float * array, int n_puntos, float delta_x);
 void set_initial(float *array, int n_puntos, float delta_x);
 void first_iteration(float *u_future, float *u_initial, int n_puntos, float r);
 void iteration(float *u_future, float *u_present, float *u_past, int n_puntos, float r);
@@ -13,7 +13,7 @@ int main(){
   float *u_present;
   float *u_future;
   int n_points=1000;
-  int n_time=350;
+  int n_time=1000;
   float delta_t=0.0005;
   float delta_x=1.0/n_points; 
   float r=delta_t / delta_x;
@@ -32,9 +32,10 @@ int main(){
     iteration(u_future, u_present, u_past, n_points, r);
     copy(u_present, u_past, n_points);
     copy(u_future, u_present, n_points);
+    print_array(u_future, n_points, delta_x);
   }
 
-  print_array(u_future, n_points);
+
   return 0;
 }
 
@@ -71,10 +72,10 @@ void set_initial(float *array, int n_puntos, float delta_x){
   array[n_puntos-1] = 0.0;
 }
 
-void print_array(float * array, int n_puntos){
+void print_array(float * array, int n_puntos, float delta_x){
   int i;
   for(i=0;i<n_puntos;i++){
-    printf("%f\n", array[i]);
+    printf("%f %f\n", delta_x*i, array[i]);
   }
 }
 
