@@ -1,13 +1,7 @@
 //#include <stdio.h>
 //#include <stdlib.h>
-
-float *reserva(int n_puntos);
-void print_array(float * array, int n_puntos, float delta_x);
-void copy(float *origen, float *destino, int n_puntos);
-
-void set_initial(float *array, int n_puntos, float delta_x);
-void first_iteration(float *u_future, float *u_initial, int n_puntos, float r);
-void iteration(float *u_future, float *u_present, float *u_past, int n_puntos, float r);
+#include "array.h"
+#include "solver.h"
 
 int main(){
   float *u_initial;

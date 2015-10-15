@@ -1,5 +1,6 @@
 #include <math.h>
 
+
 void iteration(float *u_future, float *u_present, float *u_past, int n_puntos, float r){
   int i;
   for(i=1;i<(n_puntos-1);i++){
