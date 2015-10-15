@@ -32,9 +32,8 @@ int main(){
     iteration(u_future, u_present, u_past, n_points, r);
     copy(u_present, u_past, n_points);
     copy(u_future, u_present, n_points);
-    print_array(u_future, n_points, delta_x);
   }
-
+    print_array(u_future, n_points, delta_x);
 
   return 0;
 }
