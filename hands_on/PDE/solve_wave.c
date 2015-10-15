@@ -1,12 +1,14 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
+//#include <stdio.h>
+//#include <stdlib.h>
+
 float *reserva(int n_puntos);
 void print_array(float * array, int n_puntos, float delta_x);
+void copy(float *origen, float *destino, int n_puntos);
+
 void set_initial(float *array, int n_puntos, float delta_x);
 void first_iteration(float *u_future, float *u_initial, int n_puntos, float r);
 void iteration(float *u_future, float *u_present, float *u_past, int n_puntos, float r);
-void copy(float *origen, float *destino, int n_puntos);
+
 int main(){
   float *u_initial;
   float *u_past;
@@ -38,55 +40,3 @@ int main(){
   return 0;
 }
 
-void copy(float *origen, float *destino, int n_puntos){
-  int i;
-  for(i=0;i<n_puntos;i++){
-    destino[i] = origen[i];
-  }
-}
-
-void iteration(float *u_future, float *u_present, float *u_past, int n_puntos, float r){
-  int i;
-  for(i=1;i<(n_puntos-1);i++){
-    u_future[i] = (2.0*(1.0-r*r))*u_present[i] - u_past[i] + 
-      (r*r)*(u_present[i+1] +  u_present[i-1]);
-  }
-}
-
-void first_iteration(float *u_future, float *u_initial, int n_puntos, float r){
-  int i;  
-  for(i=1;i<(n_puntos-1);i++){
-    u_future[i] = u_initial[i] + 
-      (r*r/2.0) * (u_initial[i+1] - 2.0 * u_initial[i] + u_initial[i-1]);
-  }
-}
-void set_initial(float *array, int n_puntos, float delta_x){
-  int i;
-  float x;
-  for(i=0;i<n_puntos;i++){
-    x = i * delta_x;
-    array[i] = exp(-((x-0.3)*(x-0.3))/0.01);
-  }
-  array[0] = 0.0;
-  array[n_puntos-1] = 0.0;
-}
-
-void print_array(float * array, int n_puntos, float delta_x){
-  int i;
-  for(i=0;i<n_puntos;i++){
-    printf("%f %f\n", delta_x*i, array[i]);
-  }
-}
-
-float *reserva(int n_puntos){
-  float *array;
-  int i;
-  if(!(array = malloc(n_puntos * sizeof(float)))){
-    printf("Problema en reserva\n");
-    exit(1);
-  }
-  for(i=0;i<n_puntos;i++){
-    array[i] = 0.0;
-  }
-  return array;
-}
