@@ -6,6 +6,7 @@ data = np.loadtxt('salida.dat')
 #make a simple figure
 fig = plt.figure()
 ax = plt.axes()
+
 ax.set_xlabel("x")
 ax.set_ylabel("f(x)")
 ax.set_title("Soluciones")
