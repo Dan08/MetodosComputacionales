@@ -1,14 +1,14 @@
 solucion.pdf:	salida.dat simple_matplotlib.py
 	python simple_matplotlib.py
 
-salida.dat : a.out
-	./a.out > salida.dat
+salida.dat : burgers
+	./burgers > salida.dat
 
-a.out : solve_wave.o array.o solver.o
-	cc solve_wave.o array.o solver.o -lm 
+wave : solve_wave.o array.o solver.o
+	cc solve_wave.o array.o solver.o -lm -o wave
 
-#solve_wave.o: solve_wave.c
-#	cc -c solve_wave
+burgers: solve_burgers.o array.o solver.o 
+	cc solve_burgers.o array.o solver.o -lm -o burgers
 
 clean: 
-	rm -f a.out salida.dat solucion.pdf *.o
+	rm -f wave burgers salida.dat solucion.pdf *.o

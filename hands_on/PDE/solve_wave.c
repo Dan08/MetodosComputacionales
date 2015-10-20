@@ -1,18 +1,19 @@
 //#include <stdio.h>
 //#include <stdlib.h>
+#include "vars.h"
 #include "array.h"
 #include "solver.h"
 
 int main(){
-  float *u_initial;
-  float *u_past;
-  float *u_present;
-  float *u_future;
+  FLOAT *u_initial;
+  FLOAT *u_past;
+  FLOAT *u_present;
+  FLOAT *u_future;
   int n_points=1000;
   int n_time=1000;
-  float delta_t=0.0005;
-  float delta_x=1.0/n_points; 
-  float r=delta_t / delta_x;
+  FLOAT delta_t=0.0005;
+  FLOAT delta_x=1.0/n_points; 
+  FLOAT r=delta_t / delta_x;
   int j;
   u_initial = reserva(n_points);
   u_past = reserva(n_points);

@@ -1,10 +1,11 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "vars.h"
 
-float *reserva(int n_puntos){
-  float *array;
+FLOAT *reserva(int n_puntos){
+  FLOAT *array;
   int i;
-  if(!(array = malloc(n_puntos * sizeof(float)))){
+  if(!(array = malloc(n_puntos * sizeof(FLOAT)))){
     printf("Problema en reserva\n");
     exit(1);
   }
@@ -14,14 +15,14 @@ float *reserva(int n_puntos){
   return array;
 }
 
-void print_array(float * array, int n_puntos, float delta_x){
+void print_array(FLOAT * array, int n_puntos, FLOAT delta_x){
   int i;
   for(i=0;i<n_puntos;i++){
-    printf("%f %f\n", delta_x*i, array[i]);
+    printf("%g %g\n", delta_x*i, array[i]);
   }
 }
 
-void copy(float *origen, float *destino, int n_puntos){
+void copy(FLOAT *origen, FLOAT *destino, int n_puntos){
   int i;
   for(i=0;i<n_puntos;i++){
     destino[i] = origen[i];

@@ -1,3 +1,4 @@
-float *reserva(int n_puntos);
-void print_array(float * array, int n_puntos, float delta_x);
-void copy(float *origen, float *destino, int n_puntos);
+#include "vars.h"
+FLOAT *reserva(int n_puntos);
+void print_array(FLOAT * array, int n_puntos, FLOAT delta_x);
+void copy(FLOAT *origen, FLOAT *destino, int n_puntos);
