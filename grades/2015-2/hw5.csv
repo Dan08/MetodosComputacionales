@@ -1,4 +1,4 @@
-Nombres,Apellidos,P1,P2,Nota,Comentarios
+Nombres,Apellidos,P1 (factorial),P2 (montecarlo),Nota,Comentarios
 Estudiante,Conbono,60,60,120,
 Estudiante,Sinbono,50,50,100,
 Juan,Aguilar,5,16.66666667,22,P1. No hay nada. P2. Da siempre lo mismo sin importar h.
