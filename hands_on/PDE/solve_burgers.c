@@ -1,14 +1,12 @@
-//#include <stdio.h>
-//#include <stdlib.h>
 #include "array.h"
 #include "solver.h"
-#define PI 3.14159
+#define PI 3.141592653589793
 
 int main(){
   FLOAT *u;
   FLOAT *u_past;
   int n_points=100;
-  int n_time=400;
+  int n_time=750;
   FLOAT nu = 0.07;
   FLOAT sigma = 0.02;
   FLOAT delta_x=2.0*PI/n_points; 

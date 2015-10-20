@@ -1,1 +1,1 @@
-#define FLOAT float
+#define FLOAT double
