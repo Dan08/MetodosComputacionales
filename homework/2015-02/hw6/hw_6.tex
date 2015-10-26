@@ -1,0 +1,157 @@
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-20
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{hyperref}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+
+\extraheadheight{-0.15in}
+
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 6 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Octubre 26 de 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30AM
+del jueves 5 de Noviembre del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del s\'abado 31 de Octubre del 2015 se calificar\'a
+el taller sobre 140 puntos. 
+\noindent
+Los c\'odigos deben estar en un \'unico repositorio de github con un
+\'ultimo commit hecho antes de la fecha l\'imite de entrega. El
+repositorio debe tener dos carpetas de nombre \verb"magnetico" y
+\verb"burgers" para cada uno de los ejercicios A SICUA
+solamente se debe responder con la direcci\'on del repositorio.
+
+
+\begin{questions}
+\question[50 (70)] {\bf{Movimiento de una part\'icula cargada en el
+   el campo magn\'etico de la Tierra}}
+
+
+La Tierra tiene un campo magn\'etico que la protege de part\'iculas
+cargadas. Por ejemplo, la aurora boreal es un fen\'omeno natural que se puede
+entender a partir del moviemiento de part\'iculas cargadas que se
+aceleran dentro de un campo magn\'etico y empizan a radiar energ\'ia
+electromagn\'etica.  
+
+El campo magn\'etico de la Tierra, cerca de ella y hasta una distancia
+de 4$R_{T}$ donde $R_T=6378.1$km es el radio de  la Tierra, puede ser
+aproximado por el campo de un dipolo 
+
+\begin{equation}
+\vec{B}_{dip}(\vec{r}) = \frac{\mu_0}{4\pi r^3}[3(\vec{M}\cdot\vec{
+    r})\hat{r}-\vec{M}], 
+\end{equation}
+
+donde $\vec{r}=x\hat{x} + y\hat{y} + z\hat{z}$, $r=|\hat{r}|$ y
+$\hat{r}=\vec{r}/r$. Para la Tierra tomamos ${\bf M}=-M\hat{z}$
+  antiparalelo al eje $z$ porque el polo norte magn\'etico es cercano
+  al polo sur geogr\'afico. 
+
+En el ecuador magn\'etico $(x=1R_T,y=z=0)$ la intensidad del campo es
+$B_0=3\times 10^{-5}$T. Substitutendo esto en la ecuaci\'on anterior
+tenermos que $\mu M/4\pi=B_0R_T^3$. Con esto podemos escribir en
+coordenadas cartesianas:
+
+\begin{equation}
+\vec{B}_{dip} = -\frac{B_0 R_T^3}{r^5}[3xz\hat{x} + 3yz\hat{y} + (2z^2
+  - x^2 -y^2)\hat{z}].
+\end{equation}
+
+En este problema, las velocidades de las part\'iculas est\'an en el
+r\'egimen relativista. En este caso se tiene que la ecuaci\'on de la
+fuerza se escribe como  
+ 
+\begin{equation}
+\frac{d(\gamma m \vec{v})}{dt} = q\vec{v}\times\vec{B}, 
+\end{equation}
+%
+donde $\gamma=1/\sqrt{1-v^2/c^2}$. En este caso la energ\'ia
+cin\'etica de la part\'icula se escribe como $K=(\gamma -1)mc^2$,
+donde $m$ es la masa en reposo de la part\'icula.  
+
+\begin{itemize}
+
+\item (30 (40) puntos) Escriba un programa en C que integre las ecuaciones
+  de movimiento relativista de {\bf protones} que tienen una
+  posici\'on inicial $(2R_e,0,0)$, energ\'ia cin\'etica inicial
+  $E_{k}$ (medida en millones de electronvolts) y tienen una velocidad
+  inicial descrita por $(0,v\sin\alpha, v\cos\alpha)$ donde $\alpha$
+  es un \'angulo que se conoce como el pitch angle. El programa debe
+  poder ejecutarse de la siguiente manera 
+\begin{verbatim}
+./particle_in_field.x kinetic_energy alpha
+\end{verbatim}
+donde \verb"kinetic_energy" es la energ\'ia cin\'etica inicial medida
+en megaelectronvolts y \verb"alpha" es el \'angulo $\alpha$ medido en
+grados. La trayectoria debe seguirse por $100$ segundos y al final
+debe escribir el tiempo y las coordenadas $x,y,z$ de las posiciones en un archivo
+llamado \verb"trayectoria_E_alpha.dat" donde \verb"E" es el valor de la
+energ\'ia cin\'etica de la part\'icula y \verb"alpha" es el valor del
+\'angulo $\alpha$.
+
+\item (10 (15) puntos) Escriba un programa en Python que grafique en el
+  plano {\it xy}, y en {\it xyz} la trayectoria guardada en
+  \verb"trayectoria_E_alpha.dat". La gr\'afica se debe guardar como un
+  archivo pdf.
+
+\item (10 (15) puntos) Escriba un \verb"makefile" que enlace correctamente
+  todos los pasos anteriores.
+\end{itemize}
+
+
+
+
+\question[50 (70)] {\bf{Ecuaci\'on de Burgers en 2D}}
+
+
+\begin{itemize}
+\item (30(40) puntos) Escriba un programa en C que resuelva la
+  ecuaci\'on de Burgers usando las mismas aproximaciones y variables
+  mostradas en el trabajo de Lorena Barba para 500 pasos de tiempo:\\
+\url{http://nbviewer.ipython.org/github/barbagroup/CFDPython/blob/master/lessons/10_Step_8.ipynb}
+
+\item  (10 (15) puntos) Escriba un program en Python que genere un gif
+  animado con la evoluci\'on temporal de la soluci\'on.
+
+\item (10 (15) puntos) Escriba un \verb"makefile" que enlace
+  correctamente todos los pasos anteriores.
+\end{itemize}
+
+
+\end{questions}
+\end{document}
