@@ -1,0 +1,138 @@
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-20
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+%\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{hyperref}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+
+\extraheadheight{-0.15in}
+
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 7 \\
+Profesor: Jaime Forero\\
+Fecha de Publicación: {\small \it Noviembre 10 del 2015}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 10:00AM
+del viernes 21 de Noviembre del 2015. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del lunes 16 de Noviembre del 2015 se calificar\'a
+el taller sobre 140 puntos. 
+\noindent
+Los c\'odigos deben estar en un \'unico repositorio de github con un
+\'ultimo commit hecho antes de la fecha l\'imite de entrega. El
+repositorio debe tener dos carpetas de nombre \verb"solar" y
+\verb"poblaciones" para cada uno de los ejercicios A SICUA
+solamente se debe responder con la direcci\'on del repositorio.
+
+
+\begin{questions}
+\question[50 (70)] {\bf{Ciclo solar}}
+
+Volvemos a un problema conocido por todos.  El n\'umero de manchas
+solares mensuales desde 1610. 
+
+
+
+Asumamos, como hicimos en el taller 3, que este ciclo puede describirse por la siguiente funci\'on:
+\begin{displaymath}
+f(t) = a\cos((2\pi/d) t + b) + c
+\end{displaymath}
+donde $t$ es el tiempo en a\~nos, y $a$, $b$ ,$c$ y $d$ son par\'ametros libres.
+\begin{itemize}
+
+\item (30 (40) puntos) Escriba un programa en C que explore con MCMC
+  el espacio de par\'ametros libres para encontrar sus valores m\'as
+  probables junto a su incertidumbre para imprimirlos en pantalla.
+  El programa debe poder ejecutarse de la siguiente manera 
+\begin{verbatim}
+./mcmc_solar.x n_steps n_burn
+\end{verbatim}
+donde \verb"n_steps" es el n\'umero de pasos total que hace la cadena
+de markov y \verb"n_burn" es el n\'umero de pasos iniciales de burn
+in.
+
+\item (10 (15) puntos) Escriba un programa en Python que grafique las
+  densidades de probabilidad para todos los pares de par\'ametros.
+
+\item (10 (15) puntos) Escriba un \verb"makefile" que enlace correctamente
+  todos los pasos anteriores.
+\end{itemize}
+
+
+
+
+\question[50 (70)] {\bf{Poblaciones}}
+
+Un grupo de bi\'ologos toma datos por casi una d\'ecada de una
+poblaci\'on de presas y predadores. Los bi\'ologos intuyen que el
+n\'umero de presas $x$ y el numero de predadores $y$ se describe por
+un modelo del tipo Lotka-Volterra con las siguientes ecuaciones:
+
+\begin{equation}
+\frac{dx}{dt}=x(\alpha - \beta y),
+\end{equation}
+\begin{equation}
+\frac{dy}{dt}=-y(\gamma -\delta x).
+\end{equation}
+
+donde $\alpha$, $\beta$, $\gamma$ y $\delta$ son par\'ametors libres
+que se quieren buscar a partir de los datos experimentales.
+
+\begin{itemize}
+\item (30(40) puntos) Escriba un programa en C que implemente MCMC para
+  imprimir en pantalla los valores m\'as probables de estos par\'ametros junto
+  con su incertidumbre a partir de los datos en el archivo
+  \verb"lotka_volterra_obs.dat"\footnote{El archivo se encuentra en
+    \url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/tree/master/homework/2014-20/hw_8}}. 
+
+El programa debe poder ejecutarse de la siguiente manera 
+\begin{verbatim}
+./mcmc_lotkavolterra.x n_steps n_burn
+\end{verbatim}
+donde \verb"n_steps" es el n\'umero de pasos total que hace la cadena
+de markov y \verb"n_burn" es el n\'umero de pasos iniciales de burn
+in.
+
+\item (10 (15) puntos) Escriba un programa en Python que grafique las
+  densidades de probabilidad para todos los pares de par\'ametros.
+
+\item (10 (15) puntos) Escriba un \verb"makefile" que enlace correctamente
+  todos los pasos anteriores.
+
+\end{itemize}
+
+
+\end{questions}
+\end{document}
