@@ -4,7 +4,7 @@
 
 Material del curso de Métodos Computacionales de Uniandes
 
-[Programa](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/syllabus/syllabus-20161.pdf)
+[Programa](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/blob/master/syllabus/syllabus-2015V.pdf)
 
 [Slides y Notebooks](https://github.com/ComputoCienciasUniandes/MetodosComputacionales/tree/master/slides/2015-V)
 
