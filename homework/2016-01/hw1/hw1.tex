@@ -1,0 +1,79 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen en posiciones arbitrarias
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Tarea 1 - \textsc{Linux y Python Básico}\\
+28-01-2016\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(164mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.3cm}
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:30PM
+del jueves 8 de Febrero del 2016. 
+\noindent
+Si la soluci\'on est\'a en SICUA
+antes de las 8:30AM del domingo 31 de Enero del 2016 se calificar\'a
+el taller sobre 125 puntos. 
+\noindent
+Los dos archivos c\'odigo fuente deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw1.zip", por ejemplo
+yo deber\'ia subir el zip \verb"GermanChaparro_hw1.zip".
+
+\vspace{0.3cm}
+
+\begin{questions}
+
+
+\question[75(100)] {\bf{Calentamiento}}
+
+El archivo IDEAM.txt es un archivo que contiene información sobre variables meteorol\'ogicas medidas en 36 estaciones del IDEAM ubicadas cerca de distintos aeropuertos de Colombia. La idea es que usando \texttt{awk, grep, cat, cut, sort...} escriba un script que extraiga la informaci\'on y la organice en los archivos requeridos. Adicionalmente, tiene que escribir tres scripts en Python (\verb"tanual.py, tempvsalt2014.py,"  \verb"tpatrones.py") que produzcan las gr\'aficas requeridas al ser ejecutados (por ejemplo, \texttt{python tanual.py}). Todas las gr\'aficas deben tener los t\'itulos, ejes y series de datos debidamente rotulados.
+
+\begin{itemize}
+	\item Escriba un script (\texttt{extraccion.sh}) que cree un archivo llamado \verb"clave.csv" (usando comillas para cada elemento) que tenga los datos correspondientes a las columnas: C\'odigo de la Estaci\'on, Latitud, Longitud, Altura, y Departamento, separados por comas. Este script debe crear tambi\'en un archivo llamado \verb"tempvstiempo.csv" que contenga los Valores Medios de Temperatura media como función del tiempo (mes a mes, a lo largo de las filas) para cada estaci\'on. La primera columna del archivo debe contener el C\'odigo de la Estaci\'on (igual que la primera columna del archivo \verb"clave.csv"). La escala temporal debe abarcar desde 1967 hasta 2015, y los datos que no existan (para cada Estaci\'on) deben aparecer como un espacio entre comillas.
+	\item Escriba un script \texttt{tanual.py} que haga una gr\'afica de temperatura promedio anual vs. tiempo (año a año, 1967-2015), donde cada serie de datos corresponda a una Estaci\'on. En esta gr\'afica queremos ver si las temperaturas han cambiado en el rango de tiempo para cada lugar.
+	\item Escriba un script \texttt{tempvsalt2014.py} que haga una gr\'afica de temperatura promedio vs. altura de la Estaci\'on para el año 2014. En esta gr\'afica queremos ver si hay una dependencia de la temperatura con la altura de cada lugar.
+	\item Escriba un script \texttt{tpatrones.py} que haga una gráfica de temperatura promedio mensual en el rango (es decir, el promedio de temperaturas para cada mes del año a trav\'es del rango temporal) vs. tiempo (mes a mes, 12 meses). Este script debe crear una gr\'afica para la Estaci\'on seleccionada al ser ejecutado como \texttt{python tpatrones.py 12345}, donde 12345 es el c\'odigo de la Estaci\'on. En esta gr\'afica queremos ver si hay patrones clim\'aticos que se repiten año tras año. 
+
+
+\end{itemize}
+ 
+\question[20(25)] {\bf{Una varilla sobre una pared}}
+
+Una varilla descansa inclinada sobre una pared y empieza a
+deslizarse. Escriba un c\'odigo en Python (\verb"varilla.py") que haga
+una gr\'afica de la trayectoria que describe el centro de masa de la
+varilla. Puede asumir (aunque no sea f\'isicamente cierto) que la
+varilla nunca pierde contacto con la pared. 
+
+ 
+
+\end{questions}
+
+\end{document}
