@@ -1,0 +1,139 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+% 2015-10
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{multirow}
+\usepackage{float}
+\usepackage{hyperref}
+\decimalpoint
+%\usepackage{pst-barcode}
+%\usepackage{auto-pst-pdf}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+%\extrawidth{0.75in}
+%\extrafootheight{-0.5in}
+\extraheadheight{-0.15in}
+%\pagestyle{head}
+
+%\noprintanswers
+%\printanswers
+
+
+\usepackage{upquote,textcomp}
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+\begin{document}
+\begin{center}
+{\Large Métodos Computacionales} \\
+Taller 4 \\
+Profesor: Germán Chaparro\\
+Fecha de Publicación: {\small \it Marzo 16 de 2016}\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(161mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.5cm}
+
+{\Large Instrucciones de Entrega}\\
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de la media noche
+del viernes 25 de Marzo del 2016.
+\noindent
+Cada punto debe tener la respuesta en un notebook de IPython/Jupyter por
+separado. Los notebooks deben subirse en un \'unico archivo
+\verb".zip" con el nombre \verb"NombreApellido_hw4.zip", por ejemplo
+yo deber\'ia subir el zip \verb"JaimeForero_hw4.zip".
+
+\noindent
+Los archivos de datos necesarios se encuentran aqu\'i:
+
+\noindent
+\url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesDatos/tree/master/homework/2016-01/hw_4} 
+\begin{questions}
+
+
+
+\question[25] {\bf{Darth Vader (\verb"darthvader.ipynb")}} 
+
+Escribir un programa en python que lea un archivo (.wav) de una
+voz para transformarla en algo que suene como la voz de Darth Vader. El programa debe escribir la voz transformada en un archivo .wav.
+
+Ayuda:
+\begin{itemize}
+\item Para grabar archivos .wav en UNIX y en WINDOWS  se puede
+  instalar SOX:
+  
+  
+  \verb"http://sox.sourceforge.net/"
+  
+\item 
+  Para leer archivos de Sonido en python usar la libreria
+  scikits.audiolab
+  
+  
+ \verb"http://cournape.github.io/audiolab/"
+\end{itemize}
+
+
+\question[50] {\bf{Exoplanetas (\verb"variabilidad.ipynb")}}
+
+En el archivo \texttt{kplr000757450\_q1\_q16\_tce\_01\_dvt\_lc.tbl} encontramos datos de variaciones en el flujo (normalizado) de una estrella obtenidos por el telescopio espacial Kepler. Estas variaciones en el flujo  corresponden al tr\'ansito peri\'odico de un exoplaneta entre esa estrella y nosotros.
+
+\begin{itemize}
+\item[a)] (5 puntos) Cree un array de numpy donde aparezca la primera y tercera columna del archivo, que corresponden a tiempo y flujo (desviación de la media). Filtre los datos para que no aparezcan NaN y eliminando variaciones extremas (por debajo de -0.008).
+
+
+\item[b)] (5 puntos) Encuentre y grafique las componentes obtenidas con FFT, normalizadas al n\'umero de datos. Para construir el espacio de frecuencias, considere el intervalo de tiempo como el mínimo intervalo en los datos del tiempo.
+
+\item[c)] (5 puntos) Grafique el espectro de potencia de la FFT y encuentre el periodo que corresponde a la frecuencia de la componente de Fourier más representativa dentro del espectro. El per\'iodo debe estar dado en d\'ias. 
+
+\item[d)] (15 puntos) Escriba un programa en Python que calcule la misma curva de intensidad cuando se toman en cuenta los $N$ componentes de Fourier m\'as importantes (seg\'un es espectro de potencia). Prepare gr\'aficas del nuevo espectro de potencia para cada caso, y tambi\'en de la curva reconstru\'ida con $N\leq 10$ componentes (i.e. deben aparecer 10 curvas diferentes).  
+
+\item[e)] (5 puntos)
+Prepare una gr\'afica de $\chi^2$ en funci\'on del n\'umero de
+componentes $N$ tomadas en cuenta al momento de hacer la
+reconstrucci\'on.   
+
+\item[f)] (15 puntos) Una limitaci\'on del an\'alisis anterior es la suposici\'on (falsa) de que los datos en el dominio temporal est\'an uniformemente distribuidos. Re-muestree los datos siguiendo tres m\'etodos de interpolaci\'on, y repita los puntos a)-c). Si es necesario, recorte los datos para evitar huecos muy amplios en el dominio temporal. Para qu\'e m\'etodo de interpolaci\'on se acerca el per\'iodo al valor nominal, $\sim$8 d\'ias?
+
+
+\end{itemize}
+
+
+\question[25] {\bf{C\'irculos (\verb"circulos_fourier.ipynb")}}
+
+En el archivo \verb"circ.dat" se encuentran posiciones en un plano
+$x-y$. Estos puntos corresponden a la superposici\'on de diferentes
+c\'irculos m\'as un fondo de puntos distribuidos aleatoriamente a
+partir de una distribuci\'on homog\'enea. 
+
+Encuentre el di\'ametro de estos c\'irculos a partir de m\'etodos que
+utilicen la transformada de Fourier. 
+
+Ayuda:
+Funci\'on de autocorrelaci\'on \\ 
+\verb"http://mathworld.wolfram.com/Autocorrelation.html"\\
+\verb"http://mathworld.wolfram.com/Wiener-KhinchinTheorem.html"
+
+\end{questions}
+\end{document}
