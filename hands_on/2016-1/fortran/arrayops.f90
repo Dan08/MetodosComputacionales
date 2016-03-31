@@ -13,6 +13,13 @@ program arrayops
 	integer j
 
     a = reshape((/1,2,3,4,5,6/), (/3,2/))
+    print *, "a = "
+    do i=1,3
+		do j =1,2
+        print *, i,j, a(i,j)   ! i'th row
+		enddo
+	    enddo
+	
 	b=transpose(a)
     print *, "b = "
     do i=1,2
