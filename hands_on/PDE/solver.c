@@ -4,8 +4,8 @@
 void iteration(FLOAT *u_future, FLOAT *u_present, FLOAT *u_past, int n_puntos, FLOAT r){
   int i;
   for(i=1;i<(n_puntos-1);i++){
-    u_future[i] = (2.0*(1.0-r*r))*u_present[i] - u_past[i] + 
-      (r*r)*(u_present[i+1] +  u_present[i-1]);
+    u_future[i] = (2.0*(1.0-r*r))*u_present[i] 
+      - u_past[i] + (r*r)*(u_present[i+1] +  u_present[i-1]);
   }
 }
 

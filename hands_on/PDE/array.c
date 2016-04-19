@@ -15,12 +15,14 @@ FLOAT *reserva(int n_puntos){
   return array;
 }
 
-void print_array(FLOAT * array, int n_puntos, FLOAT delta_x){
+void print_array(FILE *stream, FLOAT * array, int n_puntos, FLOAT delta_x){
   int i;
   for(i=0;i<n_puntos;i++){
-    printf("%g %g\n", delta_x*i, array[i]);
+    fprintf(stream, "%g %g\n", delta_x*i, array[i]);
   }
 }
+
+
 
 void copy(FLOAT *origen, FLOAT *destino, int n_puntos){
   int i;
