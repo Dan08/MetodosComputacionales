@@ -10,10 +10,10 @@ int main(int argc, char **argv){
   int n_points = 100;
   int n_time=0;
   FLOAT nu = 0.01;
-  FLOAT sigma = 0.02;
+  FLOAT sigma = 0.02; //this is a parameter to ensure alpha * nu < 0.5
   FLOAT delta_x = 2.0*PI/n_points; 
   FLOAT delta_t = sigma * delta_x * delta_x/nu;
-  FLOAT alpha = delta_x * nu;
+  FLOAT alpha = delta_t / (delta_x * delta_x);
   FLOAT total_time = 1.0;
   int j;
 
