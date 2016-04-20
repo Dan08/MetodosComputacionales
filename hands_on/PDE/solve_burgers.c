@@ -9,7 +9,7 @@ int main(int argc, char **argv){
   FLOAT *u_past;
   int n_points = 100;
   int n_time=0;
-  FLOAT nu = 0.07;
+  FLOAT nu = 0.01;
   FLOAT sigma = 0.02;
   FLOAT delta_x = 2.0*PI/n_points; 
   FLOAT delta_t = sigma * delta_x * delta_x/nu;

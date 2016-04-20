@@ -7,6 +7,13 @@ void iteration(FLOAT *u_future, FLOAT *u_present, FLOAT *u_past, int n_puntos, F
     u_future[i] = (2.0*(1.0-r*r))*u_present[i] 
       - u_past[i] + (r*r)*(u_present[i+1] +  u_present[i-1]);
   }
+
+  u_future[0] = (2.0*(1.0-r*r))*u_present[0] 
+    - u_past[0] + (r*r)*(u_present[1] +  u_present[n_puntos-1]);
+
+  u_future[n_puntos-1] = (2.0*(1.0-r*r))*u_present[n_puntos-1] 
+    - u_past[n_puntos-1] + (r*r)*(u_present[0] +  u_present[n_puntos-2]);
+
 }
 
 void first_iteration(FLOAT *u_future, FLOAT *u_initial, int n_puntos, FLOAT r){
@@ -15,6 +22,13 @@ void first_iteration(FLOAT *u_future, FLOAT *u_initial, int n_puntos, FLOAT r){
     u_future[i] = u_initial[i] + 
       (r*r/2.0) * (u_initial[i+1] - 2.0 * u_initial[i] + u_initial[i-1]);
   }
+
+  u_future[0] = u_initial[0] + 
+    (r*r/2.0) * (u_initial[1] - 2.0 * u_initial[0] + u_initial[n_puntos-1]);
+
+
+  u_future[n_puntos-1] = u_initial[n_puntos-1] + 
+    (r*r/2.0) * (u_initial[0] - 2.0 * u_initial[n_puntos-1] + u_initial[n_puntos-2]);
 }
 void set_initial(FLOAT *array, int n_puntos, FLOAT delta_x){
   int i;
@@ -47,5 +61,10 @@ void iteration_burgers(FLOAT *u, FLOAT *u_past, int n_puntos, FLOAT dt, FLOAT dx
   u[n_puntos-1] =  u_past[n_puntos-1] - 
     u_past[n_puntos-1]*dt/dx*(u_past[n_puntos-1]-u_past[n_puntos-2]) 
     + (nu * alpha * (u_past[0] -2.0*u_past[n_puntos-1]+u_past[n_puntos-2]));
+
+
+  u[0] = u_past[0] - 
+    u_past[0]*dt/dx*(u_past[0]-u_past[n_puntos-1]) + 
+    (nu * alpha * (u_past[1] -2.0*u_past[0]+u_past[n_puntos-2]));
 }
 
