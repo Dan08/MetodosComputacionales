@@ -28,8 +28,7 @@
 
 \includegraphics[width=490pt]{header.png}\\[0.5cm]
 
-\textsc{\LARGE M\'etodos Computacionales Avanzados}\\[0.1cm]
-
+\textsc{\LARGE M\'etodos Computacionales}\\[0.1cm]
 \large Jaime E. Forero Romero\\[0.5cm]
 
 \end{center}
@@ -96,44 +95,41 @@ E. Forero Romero%Aqui nombre del profesor principal
 %Este espacio es para hacer una introduccion al curso, evidenciando la
 %propuesta metodologica. Debe ser clara y precisa. 
 
-\noindent\normalsize Los m\'etodos computacionales fundamentan el
-trabajo en todas las \'areas t\'ecnicas y cient\'ificas,
-ya se consideren principalmente experimentales o te\'oricas. 
-Esto se debe en gran parte a que la capacidad de utilizar computadoras
-programables ha disminuido en costo monetario y en complejidad.
-
+\noindent\normalsize Los m\'etodos computacionales son un aspecto
+inseparable de cualquier \'area de trabajo en ciencia e ingenier\'ia.
+Esto se debe en gran parte a la disminuci\'on en costos y complejidad
+de uso de las computadoras programables, unido al aumento
+exponencial en su capacidad de procesamiento.
 Este curso busca guiar a los estudiantes en el desarrollo de sus
-\emph{habilidades computacionales} para trabajar con computadores
- en generar y procesar datos para obtener informaci\'on sobre la
-realidad que esos datos pretenden  describir. 
+\emph{habilidades computacionales} en generar y procesar
+datos para obtener informaci\'on sobre la realidad que esos datos
+pretenden  describir.  
 Estos datos pueden ser mediciones o simulaciones de
 sistemas f\'isicos, qu\'imicos, geol\'ogicos, biol\'ogicos,
 financieros o industriales, entre otros.     
-
-El programa del curso tiene dos componentes diferenciadas. 
-La parte de m\'etodos num\'ericos  y la parte de \emph{carpinter\'ia}
-de software.  
-La parte de m\'etodos num\'ericos ilustra como pasar de alg\'una
-pregunta sobre la realidad a un formalismo matem\'atico general, luego
-a una descripci\'on num\'erica y de ah\'i a su implementaci\'on en
-t\'erminos de software. 
-La parte de carpinter\'ia busca presentar algunas t\'ecnicas 
-m\'inimas para que los resultados del \'ultimo paso sea confiables y
-permitan obtener resultados reproducibles.
-\\[0.1cm]
+El programa del curso tiene dos componentes diferenciadas: m\'etodos
+num\'ericos  y \emph{carpinter\'ia} de software.  
+La parte de m\'etodos num\'ericos busca ilustrar el paso entre la
+formulaci\'on de una pregunta sobre la realidad en t\'erminos
+matem\'aticos y su descripci\'on num\'erica/computacional, para
+mostrar posibles formas de escribir esa pregunta con software.   
+La parte de carpinter\'ia busca presentar algunas t\'ecnicas y
+pr\'acticas necesarias (no suficientes) para poder obtener resultados
+computacionales reproducibles.   
+\\[0.1cm] 
 
 \stepcounter{mysection}
 \noindent\textbf{\large \Roman{mysection} \quad Objetivos}\\[-0.2cm]
 
 %En este espacio se debe precisar el ente visor del curso y el
 %proposito ideal al finalizar el curso. 
-\noindent\normalsize Los objetivos principales del curso son presentar
+\noindent\normalsize El objetivo principal del curso es presentar
 algoritmos y t\'ecnicas b\'asicas para:
 
 \begin{itemize}
 \item resolver ecuaciones
-  diferenciales ordinarias, parciales y estoc\'asticas. \\[-0.6cm]
-\item an\'alizar y describir datos con t\'ecnicas estad\'isticas. \\[-0.6cm]
+  diferenciales ordinarias, parciales y estoc\'asticas, \\[-0.6cm]
+\item analizar y describir datos con t\'ecnicas estad\'isticas, \\[-0.6cm]
 \item desarrollar esquemas reproducibles para el an\'alisis de datos cient\'ificos. \\[-0.6cm]
 \end{itemize}
 
@@ -147,35 +143,114 @@ algoritmos y t\'ecnicas b\'asicas para:
 estudiante est\'e en capacidad de: 
 
 \begin{itemize}
-\item Manejar dos lenguajes de programaci\'on modernos de
+\item manejar dos lenguajes de programaci\'on modernos de
   computaci\'on num\'erica: uno de alto
-  nivel (Python) y otro de bajo nivel (C).\\[-0.6cm] 
-\item Implementar algoritmos sencillos para la resoluci\'on de
+  nivel (Python) y otro de bajo nivel (C),\\[-0.6cm] 
+\item implementar algoritmos sencillos para la resoluci\'on de
   ecuaciones diferenciales y para el an\'alisis estad\'istico
-  exploratorio de datos. \\[-0.6cm]  
-\item Desarrollar un esquema computacional reproducible para simular
-  sistemas y analizar datos. \\[-0.6cm] 
+  exploratorio de datos, \\[-0.6cm]   
+\item desarrollar un esquema sencillo para obtener resultados
+  computacionales reproducibles.\\[-0.6cm]  
 \end{itemize}
 
 \stepcounter{mysection}
 \noindent\textbf{\large \Roman{mysection} \quad Contenido por
-  semanas}\\[-0.2cm] 
+  semanas}\\[-0.2cm]  
 
 %Se expone de forma ordenada toda la tematica a tratar del curso. Debe planearse para 15 semanas.
 
+\noindent\textbf{\textsc{Semana 1}}\\[-0.5cm]
+\begin{itemize}
+\item Temas:
+Unix. Consola. Editores de texto. Comandos b\'asicos. Int\'erprete de
+Python. Variables. Aritm\'etica. Listas. Diccionarios.\\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: Examen diagn\'ostico (sin nota). \\[-0.6cm]
+\end{itemize}
 
-\noindent\normalsize\textbf{\textsc{Semana 1.}}
-Unix. Repositorios. Makefiles. C. Python. Norma IEEE para aritm\'etica de punto
-flotante. 
-\\[-0.3cm]
+\noindent\textbf{\textsc{Semana 2}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: If/while/break/continue. Ciclos. Funciones. Arreglos
+(numpy). Lectura y escritura de archivos (numpy). Gr\'aficas y
+visualizac\'on (matplotlib). \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
 
-\noindent\textbf{\textsc{Semana 2.}} Integraci\'on de ecuaciones
-diferenciales ordinarias. M\'etodo de Euler (expl\'icito e
-impl\'icito), M\'etodos de Runge-Kutta, paso de tiempo adaptativo,
-leapfrog, integradores simpl\'ecticos.
-\\[-0.3cm]  
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
+\noindent\textbf{\textsc{Semana X}}\\[-0.5cm]
+\begin{itemize}
+\item Temas: \\[-0.6cm]
+\item Lecturas preparatorias: \\[-0.6cm]
+\item Talleres: \\[-0.6cm]
+\end{itemize}
+
 
 \noindent\textbf{\textsc{Semana 3.}} 
+Integraci\'on de ecuaciones diferenciales ordinarias. M\'etodo 
+leapfrog, integradores simpl\'ecticos.\\
 Ecuaciones diferenciales parciales. Diferentes esquemas de
 soluci\'on. Mec\'anica de fluidos. Leyes de conservaci\'on
 hiperb\'olicas. Riemann Solvers. M\'etodo de Godunov.
