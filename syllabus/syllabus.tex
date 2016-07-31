@@ -1,107 +1,381 @@
-% Metodos Computacionales Syllabus
-\documentclass[11pt]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[intlimits]{amsmath}
-\usepackage{hyperref}
-\usepackage{amsfonts}
-\usepackage{amscd}
-\usepackage{amssymb}
-\usepackage{natbib}
+\documentclass[letterpaper,10pt,onecolumn]{article}
 \usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+
+\usepackage{enumitem}
 \usepackage[pdftex]{color,graphicx}
-\textheight=25.5cm
-\textwidth=16.0cm
-\oddsidemargin=-0.5cm
-\topmargin=-2.0cm
-%\usepackage[latin1]{inputenc}
-%\usepackage[utf8]{inputenc}
-
-
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{calligra}
+\usepackage{url}
+%\usepackage{algpseudocode} 
+\DeclareMathAlphabet{\mathcalligra}{T1}{calligra}{m}{n}
+\DeclareFontShape{T1}{calligra}{m}{n}{<->s*[2.2]callig15}{}
+\newcommand{\scripty}[1]{\ensuremath{\mathcalligra{#1}}}
+\lstloadlanguages{[5.2]Mathematica}
+\setlength{\oddsidemargin}{0cm}
+\setlength{\textwidth}{490pt}
+\setlength{\topmargin}{-40pt}
+\addtolength{\hoffset}{-0.3cm}
+\addtolength{\textheight}{4cm}
 
 \begin{document}
+\begin{center}
 
 \includegraphics[width=490pt]{header.png}\\[0.5cm]
+
+\textsc{\LARGE M\'etodos Computacionales Avanzados}\\[0.1cm]
+
+\large Jaime E. Forero Romero\\[0.5cm]
+
+\end{center}
+
+\large \noindent\textsc{Nombre del curso:}  M\'etodos Computacionales%Aqui  
+                                %nombre del curso 
+  
+\noindent\textsc{C\'odigo del curso:} FISI 2028 (Magistral) FISI 2809 (Laboratorio) %Aqui el codigo del
+                                %curso 
+
+\noindent\textsc{Unidad acad\'emica:} Departamento de F\'isica
+
+\noindent\textsc{Periodo acad\'emico:} 201620 %Aqui el periodo,
+                                %p.ej. 201510 
+
+\noindent\textsc{Horario (magistral):} Mi 12:30 a 14:00 y Vi, 15:30 a
+17:00 %Aqui el horario, %p.ej. Ma y Ju, 10:00 a 11:20 
+
+\noindent\textsc{Horario (laboratorio):} Ju\
+
+\noindent\rule{\textwidth}{1pt}\\[-0.3cm]
+
+\normalsize \noindent\textsc{Nombre profesor(a) principal:} Jaime
+E. Forero Romero%Aqui nombre del profesor principal 
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:je.forero@uniandes.edu.co}{\nolinkurl{je.forero@uniandes.edu.co}}
+%Cambie address por su direccion de correo uniandes 
+
+\noindent\textsc{Horario y lugar de atenci\'on:} Mi 14:00 a 16:00, Oficina Ip208 
+\\[-0.1cm]
+
+\noindent\textsc{Nombre profesor(a) complementario(a):} %Aqui nombre
+                                %del profesor complementario si aplica 
+
+\noindent\textsc{Correo electr\'onico:}
+\href{mailto:@uniandes.edu.co}{\nolinkurl{@uniandes.edu.co}}
+
+%Cambie address por direccion de correo uniandes del profesor
+%complementario 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del profesor complementario, p.ej. Vi, 15:00 a
+%17:00, Oficina Ip102 
+%\\[-0.1cm]
+%Repetir esto en caso de varios profesores complementarios
+
+%\noindent\textsc{Nombre monitor(a):} %Aqui nombre del monitor si aplica
+
+%\noindent\textsc{Correo electr\'onico:}
+%\href{mailto:address@uniandes.edu.co}{\nolinkurl{address@uniandes.edu.co}}
+%%Cambie address por direccion de correo uniandes del monitor 
+
+%\noindent\textsc{Horario y lugar de atenci\'on:} %Aqui horario y
+%lugar de atencion del monitor, p.ej. Vi, 15:00 a 17:00, Oficina Ip102 
+
+\noindent\rule{\textwidth}{1pt}\\[-0.1cm]
+
+\newcounter{mysection}
+\addtocounter{mysection}{1}
+
+\noindent\textbf{\large \Roman{mysection} \quad Introducci\'on}\\[-0.2cm]
+
+%Este espacio es para hacer una introduccion al curso, evidenciando la
+%propuesta metodologica. Debe ser clara y precisa. 
+
+\noindent\normalsize Los m\'etodos computacionales fundamentan el
+trabajo en todas las \'areas t\'ecnicas y cient\'ificas,
+ya se consideren principalmente experimentales o te\'oricas. 
+Esto se debe en gran parte a que la capacidad de utilizar computadoras
+programables ha disminuido en costo monetario y en complejidad.
+
+Este curso busca guiar a los estudiantes en el desarrollo de sus
+\emph{habilidades computacionales} para trabajar con computadores
+ en generar y procesar datos para obtener informaci\'on sobre la
+realidad que esos datos pretenden  describir. 
+Estos datos pueden ser mediciones o simulaciones de
+sistemas f\'isicos, qu\'imicos, geol\'ogicos, biol\'ogicos,
+financieros o industriales, entre otros.     
+
+El programa del curso tiene dos componentes diferenciadas. 
+La parte de m\'etodos num\'ericos  y la parte de \emph{carpinter\'ia}
+de software.  
+La parte de m\'etodos num\'ericos ilustra como pasar de alg\'una
+pregunta sobre la realidad a un formalismo matem\'atico general, luego
+a una descripci\'on num\'erica y de ah\'i a su implementaci\'on en
+t\'erminos de software. 
+La parte de carpinter\'ia busca presentar algunas t\'ecnicas 
+m\'inimas para que los resultados del \'ultimo paso sea confiables y
+permitan obtener resultados reproducibles.
+\\[0.1cm]
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Objetivos}\\[-0.2cm]
+
+%En este espacio se debe precisar el ente visor del curso y el
+%proposito ideal al finalizar el curso. 
+\noindent\normalsize Los objetivos principales del curso son presentar
+algoritmos y t\'ecnicas b\'asicas para:
+
+\begin{itemize}
+\item resolver ecuaciones
+  diferenciales ordinarias, parciales y estoc\'asticas. \\[-0.6cm]
+\item an\'alizar y describir datos con t\'ecnicas estad\'isticas. \\[-0.6cm]
+\item desarrollar esquemas reproducibles para el an\'alisis de datos cient\'ificos. \\[-0.6cm]
+\end{itemize}
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Competencias a
+  desarrollar}\\[-0.2cm] 
+
+%En este espacio se describen las habilidades que el estudiante desarrollara en el transcurso del curso.
+
+\noindent\normalsize Al finalizar el curso, se espera que el
+estudiante est\'e en capacidad de: 
+
+\begin{itemize}
+\item Manejar dos lenguajes de programaci\'on modernos de
+  computaci\'on num\'erica: uno de alto
+  nivel (Python) y otro de bajo nivel (C).\\[-0.6cm] 
+\item Implementar algoritmos sencillos para la resoluci\'on de
+  ecuaciones diferenciales y para el an\'alisis estad\'istico
+  exploratorio de datos. \\[-0.6cm]  
+\item Desarrollar un esquema computacional reproducible para simular
+  sistemas y analizar datos. \\[-0.6cm] 
+\end{itemize}
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Contenido por
+  semanas}\\[-0.2cm] 
+
+%Se expone de forma ordenada toda la tematica a tratar del curso. Debe planearse para 15 semanas.
+
+
+\noindent\normalsize\textbf{\textsc{Semana 1.}}
+Unix. Repositorios. Makefiles. C. Python. Norma IEEE para aritm\'etica de punto
+flotante. 
+\\[-0.3cm]
+
+\noindent\textbf{\textsc{Semana 2.}} Integraci\'on de ecuaciones
+diferenciales ordinarias. M\'etodo de Euler (expl\'icito e
+impl\'icito), M\'etodos de Runge-Kutta, paso de tiempo adaptativo,
+leapfrog, integradores simpl\'ecticos.
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 3.}} 
+Ecuaciones diferenciales parciales. Diferentes esquemas de
+soluci\'on. Mec\'anica de fluidos. Leyes de conservaci\'on
+hiperb\'olicas. Riemann Solvers. M\'etodo de Godunov.
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 4.}} 
+Generadores de n\'umeros aleatorios. Integraci\'on. Cadenas de Markov. 
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 5.}}
+Ecuaciones diferenciales estoc\'asticas. Convergencia. Estabilidad.
+\\[-0.3cm]
+
+\noindent\textbf{\textsc{Semana 6.}} 
+Termodin\'amica de sistemas simples. Estimaci\'on de par\'ametros. 
+{\bf Entrega Taller 1}.
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 7.}} 
+Aprendizaje Supervisado. Árboles de Decisión, Clasificación, Ranking
+Regresión, Redes Neuronales. 
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 8.}} 
+Clustering: k-means, Jerárquico y Maximización del valor esperado.
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 9.}} 
+Reducción de Dimensionalidad y Predicción Estructurada: Principal
+Component Analysis (PCA), Multi-dimensional Scaling (MDS), Linear
+Discriminant Analysis (LDA); Modelos Gráficos, Redes Complejas y
+Análisis de datos Topológico.   
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 10.}}  
+{\bf Receso}.
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 11.}}  
+Procesamiento Natural de Lenguaje (Naïve Bayes) y Aprendizaje Profundo
+(Deep Learning). 
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 12.}}  
+Fundamentos de programaci\'on en paralelo. Taxonomia de arquitecturas
+para c\'omputo en paralelo. M\'aquinas para c\'omputo en paralelo en
+Uniandes. {\bf Entrega Taller 2}.
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 13.}} 
+Fundamentos de programaci\'on en paralelo: OpenMP
+\\[-0.3cm]  
+
+\noindent\textbf{\textsc{Semana 14.}} 
+Fundamentos de programaci\'on en paralelo: MPI
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 15.}} 
+Fundamentos de programaci\'on en paralelo: MPI
+\\[-0.3cm] 
+
+\noindent\textbf{\textsc{Semana 16.}} 
+C\'omo desplegar m\'aquinas de c\'omputo en La Nube. Ejemplos de
+aplicaci\'on en Amazon Web Services y Docker.  {\bf Entrega Taller 3 al final de la primera semana de finales}.
+\\[-0.1cm]  
+
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad
+  Metodolog\'ia}\\[-0.2cm] 
+
+%Se describen las tecnicas y metodos para el desarrollo exitoso del curso.
+
+\noindent\normalsize Cada clase tendr\'a una corta presentaci\'on
+te\'orica (30 minutos aproximadamente) para pasar a practicar todos
+los conceptos directamente en la computadora/cluster a trav\'es de
+ejercicios de pr\'actica (50 minutos aproximadamente). \\[0.1cm]
+
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad Criterios de
+  evaluaci\'on}\\[-0.2cm] 
+
+
+El curso tendr\'a tres entregas de trabajos, cada una con un valor
+del $(100/3) \%$ de la nota definitiva. Los temas de las entregas ser\'an
+los siguientes:
+\begin{enumerate}
+\item Ecuaciones diferenciales (ordinarias, parciales, estoc\'asticas).
+\\[-0.6cm]
+\item Machine Learning.
+\\[-0.6cm]
+\item C\'omputo en paralelo (OpenMP, MPI).
+\\[-0.2cm]
+\end{enumerate}
+
+
+\stepcounter{mysection}
+\noindent\textbf{\large \Roman{mysection} \quad
+  Bibliograf\'ia}\\[-0.2cm] 
+
+%Indicar los libros y la documentacion guia.
+
+\noindent\normalsize Bibliograf\'ia principal:
+
+\begin{itemize}
+\item R. L. Burden, J. D. Faires. \textit{Numerical analysis},
+  2011. (Biblioteca General - 519.4 B862 2011)\\[-0.6cm]
+\item A. Tveito, H.P. Langtangem, B.F. Nielsen., \textit{Elements of
+  Scientific Computing}, 2010.  (Biblioteca General, Recurso
+  Electr\'onico 510. )\\[-0.6cm] 
+\item O. Maimon and L. Rokach, \textit{The Data Mining and Knowledge
+  Discovery Handbook}, 2010. (Biblioteca General, Recurso
+  Electr\'onico 006.312)\\[-0.6cm]
+\item M. Snir, \textit{MPI : the complete reference},
+  1996. (Biblioteca General, 004.35 M637)\\[-0.6cm]
+\item J. Sanders, E. Kandrot. \textit{CUDA by example: an
+  introduction to general-purpose GPU programming}, 2010. (Biblioteca
+  General - 005.275 S152)\\[-0.2cm]
+\end{itemize} 
+
+\noindent\normalsize Bibliograf\'ia complementaria:
+
+\begin{itemize}
+\item D. Conway and J. M. White. \textit{Machine learning for
+    hackers}, 2012.\\[-0.6cm]
+\item S.Bird. \textit{Natural Language Processing with
+  Python}, 2009.\\[-0.6cm]
+\item Theano Development. \textit{Deep Learning Tutorial}
+  \url{http://deeplearning.net/tutorial/}  \\[-0.2cm]
+\end{itemize}
+
+
+\end{document}
+
+
 
 \noindent
 \textbf{FISI 2028, 2029 Métodos Computacionales (Magistral y Laboratorio)} 
 Semestre 201620\\
-\textbf{Magistral} - Martes y Jueves 7:00 - 8:30 am \\
-\textbf{Laboratorio} - Mi\'ercoles 1:00 - 2:30 pm \\
-Salón Q508\\
-Profesor: Jaime Forero, email: \textbf{je.forero}\\
-Oficina, Monitores: Por definir\\
-Horario de Atención: Con cita previa
+
 %\\
 
 
 \section*{Objetivo}
-El curso tiene como objetivo principal desarrollar los fundamentos 
-de una buena \emph{actitud computacional}.  
-Esta buena \emph{actitud} corresponde a un conjunto de habilidades para
-trabajar con computadores en generar y procesar datos para obtener
-informaci\'on sobre la realidad que esos datos pretenden
-describir. 
+El curso tiene como objetivo principal guiar a los estudiantes en el
+desarrollo de sus \emph{habilidades computacionales}.
+Nos interesan las habilitades \'utiles para trabajar con computadores
+en generar y procesar datos para obtener informaci\'on sobre la
+realidad que esos datos pretenden  describir. 
 Estos datos pueden ser mediciones o simulaciones de
-sistemas f\'isicos, geol\'ogicos, biol\'ogicos, financieros o
-industriales, entre otros.     
-Estas habilidades incluyen el aprendizaje de al menos dos lenguajes de
-programaci\'on, la familiarizaci\'on con diferentes m\'etodos num\'ericos, la
-implementaci\'on de t\'ecnicas de desarrollo de software y la pr\'actica de una actitud esc\'eptica ante resultados computacionales.
+sistemas f\'isicos, qu\'imicos, geol\'ogicos, biol\'ogicos,
+financieros o industriales, entre otros.     
+En este curso, estas habilidades incluyen el aprendizaje de al menos
+dos lenguajes de programaci\'on, la familiarizaci\'on con diferentes
+m\'etodos num\'ericos, la  implementaci\'on de t\'ecnicas de
+desarrollo de software y la pr\'actica de una actitud esc\'eptica ante
+resultados computacionales. 
 
 \section*{Metodolog\'ia}
-Esa \emph{actitud computacional} se desarrolla trabajando. 
-Las sesiones magistrales, luego de presentar un resumen de los conceptos te\'oricos, se har\'a \'enfasis en la pr\'actica y experimentaci\'on. 
-Para que esto  funcione es necesario que los estudiantes estudien el
-tema correspondiente {\bf antes de cada clase}.  
+Las \emph{habilidades computacionales} se desarrollan trabajando activamente. 
+Por esto en las sesiones magistrales, luego de presentar un resumen de
+los conceptos te\'oricos, se har\'a \'enfasis en la pr\'actica y experimentaci\'on.  
+Para que esto funcione es necesario que los estudiantes estudien el
+tema correspondiente {\bf antes de cada clase}.
 
-El programa del curso tiene dos componentes diferenciadas. La parte de
-m\'etodos de computo num\'erico y la parte de
+El programa del curso tiene dos componentes diferenciadas. 
+La parte de m\'etodos num\'ericos  y la parte de
 \emph{carpinter\'ia} de software. 
 La parte de m\'etodos num\'ericos ilustra como pasar de alg\'una
-pregunta sobre la realidad a un formalismo
-matem\'atico general, luego a una descripci\'on num\'erica y de ah\'i
-a su implementaci\'on en t\'erminos de software.
-La parte de carpinter\'ia busca presentar algunas pr\'acticas
-necesarias para el desarrollo de software de calidad.
+pregunta sobre la realidad a un formalismo matem\'atico general, luego
+a una descripci\'on num\'erica y de ah\'i a su implementaci\'on en
+t\'erminos de software. 
+La parte de carpinter\'ia busca presentar algunas condiciones
+m\'inimas para que los resultados del \'ultimo paso sea confiables y
+permitan la producci\'on de resultados reproducibles.
 
-Esta materia se ve al mismo tiempo que el \emph{Laboratorio de M\'etodos
-Computationales}. 
-El objetivo del Laboratorio es tener m\'as tiempo para practicar lo
-visto en clase, hacer ejercicios y aclarar dudas.
+En el \emph{Laboratorio de M\'etodos
+Computationales} habr\'a m\'as tiempo para practicar lo visto en la
+clase magistral, hacer ejercicios y aclarar dudas.  
 
 \section*{Lenguajes}
-\noindent Se usar\'an principalmente doe lenguajes de programaci\'on:
-C y Python. Eventualmente utilizaremos notebooks de Jupyter.
+\noindent Utilizaremos dos lenguajes de programaci\'on:
+C y Python. Eventualmente utilizaremos notebooks de Jupyter para
+trabajar con Python.
 No se  aceptar\'an tareas en Matlab, Mathematica, R, C++ o cualquier
-otro lenguaje  de programaci\'on que no este en la lista mencionada
-antes.  
-
-\section*{Evaluaci\'on - Laboratorio}
-
-En las sesiones de Laboratorio se plantear\'a un total de cinco
-ejercicios cortos para desarrollar y entregar en clase.
-Cada ejercicio corresponde a un $20\%$ de la nota final.
-El repositorio de GitHub del Laboratorio es:
-
-  \url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesLaboratorio}. 
-
-
-Todas las entregas se har\'an a trav\'es de SICUA. 
-{\bf No se aceptar\'a ninguna tarea por fuera de esa plataforma} a
-menos que ocurra un una falla en los servidores de SICUA que afecte a
-{\bf todos} los estudiantes del curso. 
-
-
+otro lenguaje  de programaci\'on.
 
 \section*{Evaluaci\'on - Clase Magistral}
 
-Se dar\'an cinco talleres y un bono para resolver y calificar, cada uno
-con un valor del $20\%$ de la nota definitiva. 
-\textbf{Para poder entregar el bono es necesario responder un examen
-  escrito (corto) sobre los temas te\'oricos vistos durante el semestre.}. 
-Al comienzo del semestre se har\'a un examen (sin nota) para
+
+Al comienzo del semestre se har\'a un examen (corto, sin nota) para
 diagnosticar el conocimiento general que ya tienen los estudiantes
-sobre los temas del curso.
+sobre los temas del curso. 
+
+Durante el cruso dar\'an cinco talleres y un bono para resolver cada
+uno con un valor del $20\%$ de la nota definitiva.  
+\textbf{Para poder entregar el bono es necesario responder un examen
+  escrito (corto) sobre los temas te\'oricos vistos durante el semestre.}
+
 
 
 Todos los talleres ser\'an \textbf{individuales}. 
@@ -138,6 +412,25 @@ encuentra distribuido en las siguientes carpetas.
 \item \texttt{syllabus/}: Programa del curso.
 
 \end{itemize}
+
+
+\section*{Evaluaci\'on - Laboratorio}
+
+En las sesiones de Laboratorio se plantear\'an un total de cinco
+ejercicios cortos para desarrollar y entregar en clase.
+Cada ejercicio corresponde a un $20\%$ de la nota final.
+El repositorio de GitHub del Laboratorio es:
+
+  \url{https://github.com/ComputoCienciasUniandes/MetodosComputacionalesLaboratorio}. 
+
+
+Todas las entregas se har\'an a trav\'es de SICUA. 
+{\bf No se aceptar\'a ninguna tarea por fuera de esa plataforma} a
+menos que ocurra un una falla en los servidores de SICUA que afecte a
+{\bf todos} los estudiantes del curso. 
+
+
+
  
  
 \newpage
