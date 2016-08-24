@@ -26,6 +26,13 @@ def error(real, calculated):
 # calculates an integral
 def integrate(func, a, b, n):
     
+    # calculates integral using montecarlo
+    def montecarlo(f, a, b, n):    
+        x = np.random.random(n)
+        f_eval = f(x)
+        result = f_eval.mean()
+        return np.log10(n), result
+
     # calculates integral using trapezoid method
     def trapezoid(f, a, b, n):
         x = np.linspace(a, b, n+1)
@@ -70,12 +77,13 @@ def integrate(func, a, b, n):
         return np.log10(n), result
         
     # calls functions
+    montecarlo_results = montecarlo(func, a, b, n)
     trapezoid_results = trapezoid(func, a, b, n)
     simpson_results = simpson(func, a, b, n)
     simpson38_results = simpson38(func, a, b, n)
     
     # returns log10 of numbers used as a list, and integrals values as another list
-    results = [trapezoid_results, simpson_results, simpson38_results]
+    results = [montecarlo_results, trapezoid_results, simpson_results, simpson38_results]
     numbers = [item[0] for item in results]
     results = [np.log10(error(exact_value, item[1])) for item in results]
     return numbers, results
@@ -83,9 +91,9 @@ def integrate(func, a, b, n):
 exact_value = exact(upper_limit) - exact(lower_limit)
 points = 20
 numbers = np.logspace(0, 6, points)
-values_buffer = [[],[],[]]
-numbers_buffer = [[],[],[]]
-names = ["Trapezoid", "Simpson", "Simpson 3/8"]
+values_buffer = [[],[],[],[]]
+numbers_buffer = [[],[],[],[]]
+names = ["MonteCarlo","Trapezoid", "Simpson", "Simpson 3/8"]
 
 # unifies methods values
 for n in numbers:
@@ -96,7 +104,10 @@ for n in numbers:
         
 # plots
 for (values_list, numbers_list, name) in zip(values_buffer, numbers_buffer, names):
-    temp = plt.plot(numbers_list, values_list, "-o", label=name)[0]
+    print name
+    print values_list
+    print numbers_list
+    plt.plot(numbers_list, values_list, "-o", label=name)
 
 plt.legend()
 plt.xlabel("$\log_{10}n$")
