@@ -104,12 +104,9 @@ for n in numbers:
         
 # plots
 for (values_list, numbers_list, name) in zip(values_buffer, numbers_buffer, names):
-    print name
-    print values_list
-    print numbers_list
     plt.plot(numbers_list, values_list, "-o", label=name)
 
-plt.legend()
+plt.legend(loc=3)
 plt.xlabel("$\log_{10}n$")
 plt.ylabel("$\log_{10}\epsilon$")
 plt.grid()
