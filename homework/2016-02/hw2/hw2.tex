@@ -29,8 +29,8 @@
 \begin{document}
 \begin{center}
 {\Large M\'etodos Computacionales} \\
-Tarea 1 - \textsc{Python}\\
-12-08-2016\\
+Tarea 2 - \textsc{Python}\\
+29-08-2016\\
 \end{center}
 
 \begin{textblock*}{40mm}(10mm,20mm)
@@ -99,15 +99,20 @@ que encuentre num\'ericamente la constante $b$ de la ley de Wien (en
 unidades de Ghz K$^{-1}$) haciendo un promedio sobre al menos $10$ temperaturas
 diferentes en el rango $T=1K - 10^{8} K $.   El valor de $b$ debe
 ser preciso en un factor de al menos $10^{-2}$ con respecto a su valor aceptado. 
+El valor de $b$ debe escribirse en un archivo llamado \verb"b.dat".
 
 \part[30] Escriba en un archivo llamado \verb"sb.py" un programa
 que encuentre num\'ericamente la constante $\sigma$ de la ley de
 Stefan-Boltzmann (en unidades de W m$^{-2}$ $K^{-4}$) haciendo un
 promedio sobre al menos $10$ temperaturas diferentes en el rango $T=1K
 - 10^{8} K $. El valor de $\sigma$ debe ser preciso en un factor de
-al menos $10^{-2}$ con respecto a su valor aceptado. Consejo: para resolver esta
-integral indefinida puede hacer un  primer cambio de variable
-$x=\frac{\nu}{\nu + 1}$ para convertirla en una integral definida. 
+al menos $10^{-2}$ con respecto a su valor aceptado. 
+El valor de $\sigma$ debe escribirse en un archivo llamado \verb"s.dat".
+Consejo: para resolver esta
+integral indefinida puede hacer un  primer cambio de variable $x=h\nu/kT$, y luego 
+$z=\frac{x}{x + c}$ para convertirla en una integral definida sobre
+$0<z<1$, de tal manera que $c$ es elegida para que el m\'aximo de la nueva
+funci\'on se encuentre en $z=1/2$.   
 
 \end{parts}
 
