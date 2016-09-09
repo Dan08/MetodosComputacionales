@@ -20,13 +20,27 @@ def fourierCoeff(points):
     for k in range(N):
         suma = 0
         for n in range(N):
-            suma += points[n]*complexExp(-2*np.pi*k*float(n)/N)
+            suma += points[n]*complexExp(-2.0*float(n)*np.pi*k/N)
         a_n[k], b_n[k] = suma    
     return a_n, b_n
     
-N = 20
-x = np.linspace(0, 2*np.pi*(1-1./N), N)
-y = np.sin(x)
+N = 100
+delta_t = 2.0*np.pi/N
+x = np.linspace(0, 2*np.pi - delta_t, N)
+y = np.sin(x) + 0.20*np.sin(20.0*x)+ 0.40*np.sin(40.0*x)
 a_n, b_n = fourierCoeff(y)
 
 print(a_n, b_n)
+
+
+plt.plot(x,y)
+plt.savefig('time.pdf')
+plt.clf()
+
+plt.plot(np.arange(N), a_n)
+plt.savefig('freq_real.pdf')
+plt.clf()
+
+plt.plot(np.arange(N), b_n)
+plt.savefig('freq_img.pdf')
+plt.clf()
