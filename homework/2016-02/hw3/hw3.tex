@@ -1,0 +1,213 @@
+
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+% Formato para los talleres del curso de Métodos Computacionales
+% Universidad de los Andes
+%--------------------------------------------------------------------
+%--------------------------------------------------------------------
+
+\documentclass[11pt,letterpaper]{exam}
+\usepackage{amsmath}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage[absolute]{textpos} % Para poner una imagen completa en la portada
+\usepackage{hyperref}
+\usepackage{float}
+
+\newcommand{\base}[1]{\underline{\hspace{#1}}}
+\boxedpoints
+\pointname{ pt}
+
+\extraheadheight{-0.15in}
+
+\newcommand\upquote[1]{\textquotesingle#1\textquotesingle} % To fix straight quotes in verbatim
+
+
+
+\begin{document}
+\begin{center}
+{\Large M\'etodos Computacionales} \\
+Tarea 3 - \textsc{Ecuaciones Diferenciales Ordinarias}\\
+12-09-2016\\
+\end{center}
+
+\begin{textblock*}{40mm}(10mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\begin{textblock*}{40mm}(164mm,20mm)
+  \includegraphics[width=3cm]{logoUniandes.png}
+\end{textblock*}
+
+\vspace{0.3cm}
+
+
+\noindent
+La solución a este taller debe subirse por SICUA antes de las 8:00AM
+del jueves 7 de octubre del 2016. 
+
+\noindent
+(10 pt) Los c\'odigos deben subirse en un
+\'unico archivo \verb".zip" con el nombre
+\verb"NombreApellido_hw3.zip". Por ejemplo yo deber\'ia subir el zip
+\verb"JaimeForero_hw3.zip". Al descomprimir el zip debe crearse la
+carpeta \verb"JaimeForero_hw3" y adentro deben estar los c\'odigos
+solicitados.
+Ning\'un programa puede utilizar las funciones especiales de numpy,
+scipy o scikit-learn para integrar, diferenciar, encontrar ceros,
+resolver sistemas de ecuaciones o hacer PCA.
+
+\vspace{0.3cm}
+
+\begin{questions}
+\question{\bf{Osciladores acoplados}}
+
+Considere un sistema de $N$ masas atadas por una cuerda como se muestran en la figura \ref{fig:loaded}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm]{loaded}
+  \caption{\label{fig:loaded} Cuerda cargada.}
+\end{figure}
+
+Para separaciones peque\~nas alrededor del punto de equilibrio, la tensi\'on $T$ a lo largo de la cuerda se puede tomar como constante. Seg\'un la figura \ref{fig:part}, las ecuaciones de movimiento est\'an dadas por
+
+\begin{equation*}
+\frac{\mathrm{d}y_n^\prime}{\mathrm{d}t} = -\frac{T}{ma}\left(2y_n(t) -y_{n-1}(t) - y_{n+1}(t)\right),
+\end{equation*}
+
+\begin{equation*}
+y_n^\prime  = \frac{\mathrm{d} y_n}{\mathrm{d} t},
+\end{equation*}
+%
+para $n$ entero tal que $0\leq n\leq N$, con condiciones de frontera fijas $y_0(t) = y_{N+1}(t) = 0$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=10cm]{part}
+  \caption{\label{fig:part} Secci\'on de la cuerda cargada.}
+\end{figure}
+
+
+Escriba un programa en python (\verb"acoplado.py") que lea un archivo
+de texto en el siguiente formato 
+\vspace{0.5cm}
+\begin{verbatim}
+N
+T
+m
+a
+y10 y20 y30 ... yN0
+y1p0 y2p0 y3p0 ... yNp0
+\end{verbatim}
+\vspace{0.5cm}
+Donde $N$ es el n\'umero de osciladores, $T$, $m$ y $a$ los par\'ametros ya mencionados y las \'ultimas dos l\'ineas representan las condiciones iniciales para las posiciones y las velocidades de cada una de las masas (separadas por espacios).
+
+El programa debe resolver el sistema de ecuaciones para un intervalo
+de tiempo que permita visualizar el comportamiento (de tal manera que
+no sea menor a un per\'iodo del movimiento ni innecesariamente largo)
+y manteniendo las p\'erdidas de energ\'ia por debajo del $10\%$ de la
+energ\'ia total inicial.
+Al final el programa debe generar:
+
+\begin{itemize}
+\item (20 puntos) Un gif animado de nombre \verb"movimiento.gif" la
+  evoluci\'on temporal de $y_n$ contra $n$ para todas las masas en
+  funci\'on del tiempo.
+\item (10 puntos) Una gr\'afica llamada \verb"energia.pdf" de la
+  variaci\'on de la ener\'gia total del sistema respecto a la
+  energ\'ia inicial, $(E(t) - E_0)/E_0$, como funci\'on del
+  tiempo. 
+\end{itemize} 
+El c\'odigo debe poder ejecutarse como 
+\begin{verbatim}
+python acoplado.py condiciones.dat
+\end{verbatim}
+%
+donde \verb"condiciones.dat" es el archivo que describe las
+condiciones iniciales.
+
+
+
+\question{\bf{Ciclos}} \\
+La siguiente direcci\'on
+\url{https://archive.ics.uci.edu/ml/machine-learning-databases/00360/}
+contiene datos correspondientes a mediciones de calidad del aire.
+Los datos fueron tomados por Saverio De Vito de la \emph{National Agency for
+New Technologies, Energy and Sustainable Economic Development}  en Italia.
+El archivo contiene 9358 mediciones de promedios hechos cada hora de
+mediciones de una serie de cinco sensores qu\'imicos diferentes. Los
+sensores estaban localizados a nivel de suelo en una calle contaminada de
+una ciudad italiana. Los datos fueron grabados entre Marzo 2004 y Febrero 2005. 
+Una descripci\'on detallada de los datos se encuentra en
+\url{https://archive.ics.uci.edu/ml/datasets/Air+Quality}.
+
+(30 puntos) Escriba un programa en python (\verb"ciclos.py") que lea
+el archivo \verb"AirQualityUCI.csv" y haga un an\'alisis de Fourier
+para obtener dos per\'iodos dominantes (en unidades de d\'ias) que se
+encuentren en la variabilidad de los datos de las mediciones reales de
+las concentraciones de  
+\begin{itemize}
+\item CO.
+\item Hydrocarburos diferentes a Metano.
+\item Benceno.
+\item NOx.
+\item NO2.
+\end{itemize}
+
+Los resultados deben escribirse en un archivo \verb"periodos.dat" que
+contiene dos columnas (para cada uno de los per\'iodos) y cinco filas
+(para cada uno de las concentraciones).  
+
+El c\'odigo debe poder ejecutarse como 
+\begin{verbatim}
+python ciclos.py AirQualityUCI.csv
+\end{verbatim}
+
+
+\question{\bf{Mezclas}} \\
+
+Utilizando el mismo conjunto de datos del punto anterior escriba un
+c\'odigo en python (\verb"mezclas.py") que haga un an\'alisis PCA y
+encuentre las dos primeras componentes principales a partir de las
+mismas columnas anteriores. 
+
+El programa debe:
+\begin{itemize}
+\item (10 puntos) Hacer una gr\'afica \verb"pca.pdf" donde se muestren
+  todas las mediciones en el plano correspondiente a las dos variables PCA
+  principales. 
+\item (10 puntos) Escribir en un archivo \verb"pca.dat" las dos columnas
+  correspondientes a las componentes principales.
+\item (10 puntos) Escribir en un archivo \verb"varianza.dat" el porcentaje de la
+  varianza que explican las dos primeras componentes principales.
+\end{itemize}
+
+{\bf Cuidado}. Las diferentes concentraciones no se miden en las mismas
+unidades. ¿C\'omo hacer para que las mediciones sean entonces
+comparables y las componentes PCA no dependan de las
+unidades utilizadas en la medici\'on?
+
+El c\'odigo debe poder ejecutarse como 
+\begin{verbatim}
+python mezclas.py AirQualityUCI.csv
+\end{verbatim}
+
+
+
+
+\end{questions}
+
+
+
+\vfill
+
+{\small Universidad de los Andes | Vigilada Mineducación
+Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.
+Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de
+1949 Minjusticia.}  
+
+\end{document}
+
