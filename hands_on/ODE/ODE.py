@@ -61,19 +61,16 @@ y_RK4, t = RK4(y_prime, y_0=1.0, t_0=0.0, t_f=5.0, N=40)
 y_sol = y_solution(t)
 
 
-#plt.plot(t,np.abs(y_RK2-y_sol),label='Runge-Kutta2')
-
-#plt.plot(time,np.abs(yp-an),label='Leap frog')
-#plt.plot(time,np.abs(y-an),label='euler')
-#plt.plot(time,np.abs(yrp-an),label='Runge-Kutta4')
+plt.rc('font', family='serif', size=16)
 plt.plot(t,y_E,label='Euler')
 plt.plot(t,y_LF,label='LeapFrog')
 plt.plot(t,y_RK2,label='Runge-Kutta2')
 plt.plot(t,y_RK4,label='Runge-Kutta4')
 plt.legend()
-plt.savefig('ODE_solutions.pdf')
-plt.xlabel('y')
+plt.ylabel('y')
 plt.xlabel('tiempo')
+plt.title('$y^{\prime} = -y$')
+plt.savefig('ODE_solutions.pdf')
 plt.clf()
 
 delta_t = t[1]-t[0]
