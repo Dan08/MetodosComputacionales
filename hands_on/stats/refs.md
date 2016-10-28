@@ -1,0 +1,1 @@
+[Statistics for hackers](https://speakerdeck.com/pycon2016/jake-vanderplas-statistics-for-hackers)
